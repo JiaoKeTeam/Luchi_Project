@@ -2055,3 +2055,8 @@ table {
     width: 50%;
     float: left;
 }
+
+.div_top{
+    height: 450px;
+    width: 100%;
+}
