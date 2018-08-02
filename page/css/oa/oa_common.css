@@ -198,14 +198,8 @@ table {
 .search {
     float: right;
     padding: 1px 5px;
-    margin-right: 10px;
-    margin-top:  3px;
-    margin-bottom: 3px;
+    margin: 2px 10px 2px 0;
     border-radius: 5px;
-    height: 20px;
-    border: solid 1px #c6c6c6;
-    line-height: 23px;
-    color: #585858;
 }
 
 /*手型光标*/
@@ -615,14 +609,12 @@ table {
 
 /*form*/
 .forminput, .search {
-    height: 26px;
+    height: 21px;
     border: solid 1px #c6c6c6;
-    line-height: 26px;
-    text-indent: 8px;
-    *text-indent: 0;
-    *padding-left: 8px;
-    font-family: '微软雅黑';
+    line-height: 22px;
+    padding-left: 8px;
     color: #585858;
+    text-align:  center;
 }
 
 .nforminput {

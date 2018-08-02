@@ -7,117 +7,117 @@
 
 /*color*/
 a:hover {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .loginbox {
-    background: #227447;
+    background: #f5f9ff;
 }
 
 .userlogin li a {
-    background: #227447;
+    background: #f5f9ff;
 }
 
 .headtop {
-    background: #227447;
+    background: #f5f9ff;
 }
 
 .nav li a.selected {
-    color: #227447;
+    color: #000000;
 }
 
 .leftmenu li a.selected {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .menutab li.tabselected {
-    border-top: solid 2px #227447;
-    color: #227447;
+    border-top: solid 2px #f5f9ff;
+    color: #f5f9ff;
 }
 
 .menutab li.tabselected a {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .tabbtn a:hover {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .toolbar li a.selected, .toolbar li a.selected:hover {
-    background: #227447;
-    border: solid 1px #227447;
+    background: #f5f9ff;
+    border: solid 1px #f5f9ff;
 }
 
 .pagelist li a.selected, .pagelist li a.selected:hover {
-    background: #227447;
-    border: solid 1px #227447;
+    background: #f5f9ff;
+    border: solid 1px #f5f9ff;
 }
 
 .layui-layer-btn .layui-layer-btn0 {
-    border-color: #227447;
-    background-color: #227447;
+    border-color: #f5f9ff;
+    background-color: #f5f9ff;
 }
 
 .listbox i {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .simpletable a {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .textlist li span {
-    background: #227447;
+    background: #f5f9ff;
 }
 
 .formtable td a {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .btnsave {
-    background: #227447;
-    border: solid 1px #227447;
+    background: #f5f9ff;
+    border: solid 1px #f5f9ff;
 }
 
 .btnstyle {
-    background: #227447;
-    border: solid 1px #227447;
+    background: #f5f9ff;
+    border: solid 1px #f5f9ff;
 }
 
 .classify {
-    border-left: solid 3px #227447;
+    border-left: solid 3px #f5f9ff;
 }
 
 .datetitle {
-    border-left: solid 3px #227447;
+    border-left: solid 3px #f5f9ff;
 }
 
 .dateright li.current {
-    background: #227447;
-    border: solid 1px #227447;
+    background: #f5f9ff;
+    border: solid 1px #f5f9ff;
 }
 
 .tab li.tabcurrent {
-    border-top: solid 3px #227447;
+    border-top: solid 3px #f5f9ff;
 }
 
 .tab li.tabcurrent a {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .step li.stepcurrent {
-    background: #227447;
+    background: #f5f9ff;
 }
 
 .step li.stepcurrent span {
-    color: #227447;
+    color: #f5f9ff;
 }
 
 .nextlink {
-    background: #227447;
-    border: solid 1px #227447;
+    background: #f5f9ff;
+    border: solid 1px #f5f9ff;
 }
 
 .select_ul li.cur {
-    background: #227447;
+    background: #f5f9ff;
 }

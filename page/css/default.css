@@ -200,23 +200,19 @@ table {
 }
 
 .headtop {
-    height: 60px;
+    height: 80px;
 }
 
 .logo {
     display: block;
     float: left;
     cursor: pointer;
-    padding: 8px 0 8px 8px;
-}
-
-.logo img {
-    width: 230px;
+    padding: 5px 10px 5px 20px;
 }
 
 .nav {
     float: left;
-    margin-top: 34px;
+    margin-top: 54px;
     margin-left: 10px;
 }
 
@@ -227,7 +223,7 @@ table {
 
 .nav li a {
     display: block;
-    color: #fff;
+    color: #000000;
     height: 26px;
     padding: 0 15px;
     line-height: 23px;
@@ -239,11 +235,11 @@ table {
 }
 
 .nav li a.selected {
-    background: #f1f1f1;
+    background: #fff;
 }
 
 .nav li a.selected:hover {
-    background: #f1f1f1;
+    background: #fff;
 }
 
 .topright {
@@ -251,8 +247,8 @@ table {
 }
 
 .topright a {
-    color: #fff;
-    margin-top: 34px;
+    color: #000000;
+    margin-top: 54px;
 }
 
 .user {
@@ -262,7 +258,6 @@ table {
 
 .user a {
     display: block;
-    background: url(../images/userbg.png);
     height: 26px;
     line-height: 26px;
     padding: 0 3px;
@@ -282,7 +277,7 @@ table {
 
 .user a:hover, .skin a:hover {
     background: url(../images/navbg.png);
-    color: #fff;
+    color: #000000;
 }
 
 .userico {
@@ -427,7 +422,7 @@ table {
 .userlist {
     position: absolute;
     z-index: 100;
-    top: 60px;
+    top: 80px;
     right: 0;
     padding: 1px;
     background: #fff;
@@ -473,7 +468,7 @@ table {
     right: 100px;
     *right: 99px;
     height: 53px;
-    top: 60px;
+    top: 80px;
     padding-left: 8px;
     padding-top: 8px;
     display: none;
@@ -495,11 +490,11 @@ table {
 }
 
 .green {
-    background: #227447;
+    background: #f5f9ff;
 }
 
 .skinlist li a.green:hover {
-    background: #227447;
+    background: #f5f9ff;
     filter: alpha(opacity=8);
     -moz-opacity: 0.80;
     opacity: 0.80;
@@ -1905,6 +1900,7 @@ table {
 
 .chartbox3 {
     border: solid 0px #d6d6d6;
+    margin-top: 40px;
 }
 
 .charts3 {

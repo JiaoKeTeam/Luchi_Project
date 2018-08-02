@@ -23,7 +23,7 @@ $(function () {
             $(".right_page").css("width", "96%");
         } else {
             $('.nav').removeClass('nav-mini');
-            $(".right_page").css("width", "89%");
+            $(".right_page").css("width", "87%");
         }
     });
 
@@ -48,6 +48,13 @@ $(function () {
         removeOwnName();
         personal(this);
         $('#oa-iframe').attr("src", "personal/oa_personal_salary.html");
+    });
+
+    //工资统计
+    $("#wage_statistics").on("click", function () {
+        removeOwnName();
+        personal(this);
+        $('#oa-iframe').attr("src", "personal/oa_wage_statistics.html");
     });
 
     //待办记事
