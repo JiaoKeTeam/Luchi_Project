@@ -1,0 +1,1059 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>打卡记录</title>
+<link href="../../css/default.css" rel="stylesheet" type="text/css">
+<link href="../../css/style/green.css" rel="stylesheet" type="text/css" id = 'link'>
+<link type="text/css" rel="stylesheet" href="../../slider/css/carousel.css">
+<script src="../../js/echarts/echarts.js"></script>
+<script src="../../js/echarts/uimaker.js"></script>
+</head>
+
+<body style="padding:10px 8px 700px 8px;">
+
+<div class="infolist1">
+
+    <div class="infoboxleft">
+        <div class="boxtitle">
+            <span>一号配比</span>
+            <a href="qc_dm_data_number.html" target="_self">更多
+                <i class="iconfont">&#xeba8;</i>
+            </a>
+        </div>
+
+        <div class="boxdown">
+                   <table class="simpletable">
+
+            <thead>
+                <th>产品盘号</th>
+
+                <th>生产时间</th>
+                <th>生产人</th>
+                <th>操作</th>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>20171101</td>
+
+                    <td>2017-11-01</td>
+
+                    <td>uimaker</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171102</td>
+
+                    <td>2017-11-02</td>
+
+                    <td>admin</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171103</td>
+
+                    <td>2017-11-03 </td>
+
+                    <td>nanjing</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171104</td>
+
+                    <td>2017-11-04</td>
+
+                    <td>office</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171105</td>
+
+                    <td>2017-11-05</td>
+
+                    <td>uimaker</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171106</td>
+ 
+                    <td>2017-11-06 </td>
+
+                    <td>guanliyuan</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171107</td>
+ 
+                    <td>2017-11-07 </td>
+
+                    <td>moodoc</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20171108</td>
+
+                    <td>2017-11-08 </td>
+
+                    <td>iphonex</td>
+                    <td>
+
+                        <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                            <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="chartbox4">
+    <div class="boxtitle">
+        <span>一号配比产品统计图</span>
+        <a href="#">更多
+            <i class="iconfont">&#xeba8;</i>
+        </a>
+    </div>
+    <div id="chart1" class="charts"></div>
+
+<script type="text/javascript">
+    var myChart1 = echarts.init(document.getElementById('chart1'));
+    // 指定图表的配置项和数据
+    var colors = ['#5793f3', '#d14a61', '#675bba'];
+    var option1 = {
+        color: colors,
+
+        tooltip: {
+            trigger: 'none',
+            axisPointer: {
+                type: 'cross'
+            }
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                dataView: { show: true, readOnly: false },
+                magicType: { show: true, type: ['line', 'bar'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        legend: {
+            data: ['标准数据', '实际数据']
+        },
+        grid: {
+            top: 70,
+            bottom: 50
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '实际温度 ' + params.value
+                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+            },
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[0]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '标准温度  ' + params.value
+                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: '实际温度 ',
+                type: 'line',
+                xAxisIndex: 1,
+                smooth: true,
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+            },
+            {
+                name: '标准温度',
+                type: 'line',
+                smooth: true,
+                data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
+            }
+        ]
+    };
+        setInterval(function () {//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option1.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option1, true);
+        }, 2000);
+        myChart1.setOption(option1);
+        window.addEventListener("resize", function () {
+            myChart1.resize();
+        });
+    </script>
+
+</div>
+
+<div class="infolist1">
+
+    <div class="infoboxleft">
+        <div class="boxtitle">
+            <span>二号配比</span>
+            <a href="qc_dm_data_number.html" target="_self">更多
+                <i class="iconfont">&#xeba8;</i>
+            </a>
+        </div>
+
+        <div class="boxdown">
+            <table class="simpletable">
+
+                <thead>
+                    <th>产品盘号</th>
+
+                    <th>生产时间</th>
+                    <th>生产人</th>
+                    <th>操作</th>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>20171101</td>
+
+                        <td>2017-11-01</td>
+
+                        <td>uimaker</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171102</td>
+
+                        <td>2017-11-02</td>
+
+                        <td>admin</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171103</td>
+
+                        <td>2017-11-03 </td>
+
+                        <td>nanjing</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171104</td>
+
+                        <td>2017-11-04</td>
+
+                        <td>office</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171105</td>
+
+                        <td>2017-11-05</td>
+
+                        <td>uimaker</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171106</td>
+
+                        <td>2017-11-06 </td>
+
+                        <td>guanliyuan</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171107</td>
+
+                        <td>2017-11-07 </td>
+
+                        <td>moodoc</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171108</td>
+
+                        <td>2017-11-08 </td>
+
+                        <td>iphonex</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="chartbox4">
+    <div class="boxtitle">
+        <span>二号配比产品统计图</span>
+        <a href="#">更多
+            <i class="iconfont">&#xeba8;</i>
+        </a>
+    </div>
+    <div id="chart2" class="charts"></div>
+
+    <script type="text/javascript">
+        var myChart2 = echarts.init(document.getElementById('chart2'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option2 = {
+            color: colors,
+
+            tooltip: {
+                trigger: 'none',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            legend: {
+                data: ['标准数据', '实际数据']
+            },
+            grid: {
+                top: 70,
+                bottom: 50
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[1]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '实际温度 ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                },
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[0]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '标准温度  ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '实际温度 ',
+                    type: 'line',
+                    xAxisIndex: 1,
+                    smooth: true,
+                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                },
+                {
+                    name: '标准温度',
+                    type: 'line',
+                    smooth: true,
+                    data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
+                }
+            ]
+        };
+        setInterval(function () {//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option2.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart2.setOption(option2, true);
+        }, 2000);
+        myChart2.setOption(option2);
+        window.addEventListener("resize", function () {
+            myChart2.resize();
+        });
+    </script>
+
+</div>
+
+<div class="infolist1">
+
+    <div class="infoboxleft">
+        <div class="boxtitle">
+            <span>三号配比</span>
+            <a href="qc_dm_data_number.html" target="_self">更多
+                <i class="iconfont">&#xeba8;</i>
+            </a>
+        </div>
+
+        <div class="boxdown">
+            <table class="simpletable">
+
+                <thead>
+                    <th>产品盘号</th>
+
+                    <th>生产时间</th>
+                    <th>生产人</th>
+                    <th>操作</th>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>20171101</td>
+
+                        <td>2017-11-01</td>
+
+                        <td>uimaker</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171102</td>
+
+                        <td>2017-11-02</td>
+
+                        <td>admin</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171103</td>
+
+                        <td>2017-11-03 </td>
+
+                        <td>nanjing</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171104</td>
+
+                        <td>2017-11-04</td>
+
+                        <td>office</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171105</td>
+
+                        <td>2017-11-05</td>
+
+                        <td>uimaker</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171106</td>
+
+                        <td>2017-11-06 </td>
+
+                        <td>guanliyuan</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171107</td>
+
+                        <td>2017-11-07 </td>
+
+                        <td>moodoc</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171108</td>
+
+                        <td>2017-11-08 </td>
+
+                        <td>iphonex</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="chartbox4">
+    <div class="boxtitle">
+        <span>三号配比产品统计图</span>
+        <a href="#">更多
+            <i class="iconfont">&#xeba8;</i>
+        </a>
+    </div>
+    <div id="chart3" class="charts"></div>
+
+    <script type="text/javascript">
+        var myChart3 = echarts.init(document.getElementById('chart3'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option3 = {
+            color: colors,
+
+            tooltip: {
+                trigger: 'none',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            legend: {
+                data: ['标准数据', '实际数据']
+            },
+            grid: {
+                top: 70,
+                bottom: 50
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[1]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '实际温度 ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                },
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[0]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '标准温度  ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '实际温度 ',
+                    type: 'line',
+                    xAxisIndex: 1,
+                    smooth: true,
+                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                },
+                {
+                    name: '标准温度',
+                    type: 'line',
+                    smooth: true,
+                    data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
+                }
+            ]
+        };
+        setInterval(function () {//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option3.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart3.setOption(option3, true);
+        }, 2000);
+        myChart3.setOption(option3);
+        window.addEventListener("resize", function () {
+            myChart3.resize();
+        });
+    </script>
+
+</div>
+
+<div class="infolist1">
+
+    <div class="infoboxleft">
+        <div class="boxtitle">
+            <span>四号配比</span>
+            <a href="qc_dm_data_number.html" target="_self">更多
+                <i class="iconfont">&#xeba8;</i>
+            </a>
+        </div>
+
+        <div class="boxdown">
+            <table class="simpletable">
+
+                <thead>
+                    <th>产品盘号</th>
+
+                    <th>生产时间</th>
+                    <th>生产人</th>
+                    <th>操作</th>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>20171101</td>
+
+                        <td>2017-11-01</td>
+
+                        <td>uimaker</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171102</td>
+
+                        <td>2017-11-02</td>
+
+                        <td>admin</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171103</td>
+
+                        <td>2017-11-03 </td>
+
+                        <td>nanjing</td>
+                        <td>
+
+                            <a href="#" class="selected" id="">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171104</td>
+
+                        <td>2017-11-04</td>
+
+                        <td>office</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171105</td>
+
+                        <td>2017-11-05</td>
+
+                        <td>uimaker</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171106</td>
+
+                        <td>2017-11-06 </td>
+
+                        <td>guanliyuan</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171107</td>
+
+                        <td>2017-11-07 </td>
+
+                        <td>moodoc</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>20171108</td>
+
+                        <td>2017-11-08 </td>
+
+                        <td>iphonex</td>
+                        <td>
+
+                            <a href="qc_dm_data_detail.html" target="_self" class="selected" id="add">
+                                <i class="toolico iconfont">&#xe970;</i>查看</a>
+
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="chartbox4">
+    <div class="boxtitle">
+        <span>四号配比产品统计图</span>
+        <a href="#">更多
+            <i class="iconfont">&#xeba8;</i>
+        </a>
+    </div>
+    <div id="chart4" class="charts"></div>
+
+    <script type="text/javascript">
+        var myChart4 = echarts.init(document.getElementById('chart4'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option4 = {
+            color: colors,
+
+            tooltip: {
+                trigger: 'none',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            legend: {
+                data: ['标准数据', '实际数据']
+            },
+            grid: {
+                top: 70,
+                bottom: 50
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[1]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '实际温度 ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                },
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[0]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '标准温度  ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '实际温度 ',
+                    type: 'line',
+                    xAxisIndex: 1,
+                    smooth: true,
+                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                },
+                {
+                    name: '标准温度',
+                    type: 'line',
+                    smooth: true,
+                    data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
+                }
+            ]
+        };
+        setInterval(function () {//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option4.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart4.setOption(option4, true);
+        }, 2000);
+        myChart4.setOption(option4);
+        window.addEventListener("resize", function () {
+            myChart4.resize();
+        });
+    </script>
+
+</div>
+
+
+</div>
+
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/skin.js"></script>
+</html>

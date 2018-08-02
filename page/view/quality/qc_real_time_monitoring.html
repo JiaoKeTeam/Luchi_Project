@@ -1,0 +1,734 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>实时监控</title>
+<link href="../../css/default.css" rel="stylesheet" type="text/css">
+<link href="../../css/style/green.css" rel="stylesheet" type="text/css" id = 'link'>
+<script src="../../js/echarts/echarts.js"></script>
+<script src="../../js/echarts/uimaker.js"></script>
+</head>
+
+<body style="padding:15px 8px 20px 8px;">
+
+<div class="infolist_realtime" style="padding-right:70px;">
+
+    <div class="boxtitle">
+        <span class="span_realtime">一号炉产品信息</span>
+    </div>
+    <div>
+        <table class="simpletable">
+
+            <thead>
+            <th>生产日期</th>
+            <th>生产时间</th>
+            <th>配比号</th>
+            <th>车号</th>
+            <th>盘号</th>
+            <th>生产人</th>
+            <th>客户号</th>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td>20171101</td>
+                <td>8:35</td>
+                <td>256</td>
+                <td>京C66666</td>
+                <td>A16</td>
+                <td>王建军</td>
+                <td>1554568791</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="boxtitle">
+        <span class="span_realtime">一号炉产品状态数据</span>
+    </div>
+    <div>
+        <table class="simpletable">
+
+            <thead>
+            <th>时间</th>
+            <th>混合料温度</th>
+            <th>沥青温度</th>
+            <th>石粉</th>
+            <th>沥青</th>
+            <th>再生料</th>
+            <th>添加剂</th>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td>8:30:44</td>
+                <td>75<i>℃</i></td>
+                <td>256<i>℃</i></td>
+                <td>16<i>%</i></td>
+                <td>16<i>%</i></td>
+                <td>16<i>%</i></td>
+                <td>16<i>%</i></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+<div class="infolist_realtime">
+
+    <div class="boxtitle">
+        <span class="span_realtime">二号炉产品信息</span>
+    </div>
+    <div>
+        <table class="simpletable">
+
+            <thead>
+            <th>生产日期</th>
+            <th>生产时间</th>
+            <th>配比号</th>
+            <th>车号</th>
+            <th>盘号</th>
+            <th>生产人</th>
+            <th>客户号</th>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td>20171101</td>
+                <td>8:35</td>
+                <td>256</td>
+                <td>京C66666</td>
+                <td>A16</td>
+                <td>王建军</td>
+                <td>1554568791</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="boxtitle">
+        <span class="span_realtime">二号炉产品状态数据</span>
+    </div>
+    <div>
+        <table class="simpletable">
+
+            <thead>
+            <th>时间</th>
+            <th>混合料温度</th>
+            <th>沥青温度</th>
+            <th>石粉</th>
+            <th>沥青</th>
+            <th>再生料</th>
+            <th>添加剂</th>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td>8:30:44</td>
+                <td>75
+                    <i>℃</i>
+                </td>
+                <td>256
+                    <i>℃</i>
+                </td>
+                <td>16
+                    <i>%</i>
+                </td>
+                <td>16
+                    <i>%</i>
+                </td>
+                <td>16
+                    <i>%</i>
+                </td>
+                <td>16
+                    <i>%</i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+
+<div class="divbox_realtime">
+
+
+    <div>
+        <div class="boxtitle">
+            <span class="span_realtime">一号炉实时温度监测图</span>
+        </div>
+        <div id="chart1" class="charts1"></div>
+    </div>
+
+    <script type="text/javascript">
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option1 = {
+            color: colors,
+
+            tooltip: {
+                trigger: 'none',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                data: ['标准数据', '实际数据']
+            },
+            grid: {
+                top: 70,
+                bottom: 50
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[1]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '实际温度 ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                },
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[0]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '标准温度  ' + params.value
+                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '实际温度 ',
+                    type: 'line',
+                    xAxisIndex: 1,
+                    smooth: true,
+                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                },
+                {
+                    name: '标准温度',
+                    type: 'line',
+                    smooth: true,
+                    data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
+                }
+            ]
+        };
+
+        setInterval(function () {//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option1.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart1.setOption(option1, true);
+        }, 2000);
+        myChart1.setOption(option1);
+        window.addEventListener("resize", function () {
+            myChart1.resize();
+        });
+
+
+    </script>
+</div>
+</li>
+
+<div class="divbox_realtime">
+
+    <div>
+        <div class="boxtitle">
+            <span class="span_realtime">二号炉实时温度监测图</span>
+        </div>
+        <div id="chart5" class="charts1"></div>
+    </div>
+
+    <script type="text/javascript">
+        var myChart5 = echarts.init(document.getElementById('chart5'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option5 = {
+            color: colors,
+            tooltip: {
+                trigger: 'none',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {
+                        show: true,
+                        readOnly: false
+                    },
+                    magicType: {
+                        show: true,
+                        type: ['line', 'bar']
+                    },
+                    restore: {
+                        show: true
+                    },
+                    saveAsImage: {
+                        show: true
+                    }
+                }
+            },
+            legend: {
+                data: ['标准数据', '实际数据']
+            },
+            grid: {
+                top: 70,
+                bottom: 50
+            },
+            xAxis: [{
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    onZero: false,
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisPointer: {
+                    label: {
+                        formatter: function (params) {
+                            return '实际温度 ' + params.value +
+                                (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                        }
+                    }
+                },
+                data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30",
+                    "9:40", "9:50"
+                ]
+            },
+                {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        onZero: false,
+                        lineStyle: {
+                            color: colors[0]
+                        }
+                    },
+                    axisPointer: {
+                        label: {
+                            formatter: function (params) {
+                                return '标准温度  ' + params.value +
+                                    (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+                            }
+                        }
+                    },
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30",
+                        "9:40", "9:50"
+                    ]
+                }
+            ],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                name: '实际温度 ',
+                type: 'line',
+                xAxisIndex: 1,
+                smooth: true,
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+            },
+                {
+                    name: '标准温度',
+                    type: 'line',
+                    smooth: true,
+                    data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
+                }
+            ]
+        };
+        setInterval(function () { //把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option5.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option5, true);
+        }, 2000);
+        myChart5.setOption(option5);
+        window.addEventListener("resize", function () {
+            myChart5.resize();
+        });
+    </script>
+</div>
+</li>
+
+<div class="divbox">
+    <div>
+        <div class="boxtitle">
+            <span class="span_realtime">一号炉实时填料称重图</span>
+        </div>
+        <div id="chart2" class="charts1"></div>
+    </div>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart2 = echarts.init(document.getElementById('chart2'), 'uimaker');
+        // 指定图表的配置项和数据
+        option2 = {
+            tooltip: {
+                trigger: 'item',
+                textStyle: {fontSize: 14},
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            grid: {
+                x: 60,
+                x2: 40,
+                y: 10,
+                height: 140
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '单位: %',
+                    nameTextStyle: {
+                        color: 'rgba(255,64,104,0.5)',
+                    },
+                    axisLabel: {
+                        formatter: '{value} %',
+                        textStyle: {
+                            color: 'rgba(255,64,104,0.5)',
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            type: "dotted",
+                            color: ["rgba(255,60,104,.1)"]
+                        }
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '骨料',
+                    type: 'bar',
+                    data: [32, 20, 10, 60, 70, 50, 45],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [
+                            {
+                                type: 'line',
+                                yAxis: 80,
+                                formatter: '{c}%'
+                            }
+                        ]
+                    }
+                },
+                {
+                    name: '添加剂',
+                    type: 'bar',
+                    stack: '广告',
+                    data: [20, 30, 40, 50, 60, 40, 20],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [
+                            {
+                                type: 'line',
+                                yAxis: 70,
+                                formatter: '{c}%'
+                            }
+                        ]
+                    }
+                },
+                {
+                    name: '沥青',
+                    type: 'bar',
+                    data: [80, 90, 20, 80, 45, 60, 75],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [
+                            {
+                                type: 'line',
+                                yAxis: 60,
+                                formatter: '{c}%'
+                            }
+                        ]
+                    }
+                },
+                {
+                    name: '石料',
+                    type: 'bar',
+                    barWidth: 5,
+                    stack: '石料',
+                    data: [56, 37, 40, 61, 80, 73, 66],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [
+                            {
+                                type: 'line',
+                                yAxis: 50,
+                                Sformatter: '{c}%'
+                            }
+                        ]
+                    }
+                },
+
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart2.setOption(option2);
+        window.addEventListener("resize", function () {
+            myChart2.resize();
+        });
+    </script>
+</div>
+
+<div class="divbox">
+    <div>
+        <div class="boxtitle">
+            <span class="span_realtime">二号号炉实时填料称重图</span>
+        </div>
+        <div id="chart4" class="charts1"></div>
+    </div>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart4 = echarts.init(document.getElementById('chart4'), 'uimaker');
+        // 指定图表的配置项和数据
+        option4 = {
+            tooltip: {
+                trigger: 'item',
+                textStyle: {
+                    fontSize: 14
+                },
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            grid: {
+                x: 60,
+                x2: 40,
+                y: 10,
+                height: 140
+            },
+            calculable: true,
+            xAxis: [{
+                type: 'category',
+                data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00"]
+            }],
+            yAxis: [{
+                type: 'value',
+                name: '单位: %',
+                nameTextStyle: {
+                    color: 'rgba(255,64,104,0.5)',
+                },
+                axisLabel: {
+                    formatter: '{value} %',
+                    textStyle: {
+                        color: 'rgba(255,64,104,0.5)',
+                    }
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: "dotted",
+                        color: ["rgba(255,60,104,.1)"]
+                    }
+                }
+            }],
+            series: [{
+                name: '骨料',
+                type: 'bar',
+                data: [32, 20, 10, 60, 70, 50, 45],
+                markLine: {
+                    itemStyle: {
+                        normal: {
+                            color: '#FA8565',
+                            label: {
+                                formatter: '{c}%'
+                            }
+                        }
+                    },
+                    data: [
+                        {
+                            type: 'line',
+                            yAxis: 80,
+                            formatter: '{c}%'
+                        }
+                    ]
+                }
+            },
+                {
+                    name: '添加剂',
+                    type: 'bar',
+                    stack: '广告',
+                    data: [20, 30, 40, 50, 60, 40, 20],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [{
+                            type: 'line',
+                            yAxis: 70,
+                            formatter: '{c}%'
+                        }]
+                    }
+
+                },
+                {
+                    name: '沥青',
+                    type: 'bar',
+                    data: [80, 90, 20, 80, 45, 60, 75],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [{
+                            type: 'line',
+                            yAxis: 60,
+                            formatter: '{c}%'
+                        }]
+                    }
+                },
+                {
+                    name: '石料',
+                    type: 'bar',
+                    barWidth: 5,
+                    stack: '石料',
+                    data: [56, 37, 40, 61, 80, 73, 66],
+                    markLine: {
+                        itemStyle: {
+                            normal: {
+                                color: '#FA8565',
+                                label: {
+                                    formatter: '{c}%'
+                                }
+                            }
+                        },
+                        data: [
+                            {
+                                type: 'line',
+                                yAxis: 50,
+                                Sformatter: '{c}%'
+                            }
+                        ]
+                    }
+                },
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart4.setOption(option4);
+        window.addEventListener("resize", function () {
+            myChart4.resize();
+        });
+    </script>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/skin.js"></script>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>辅助分析</title>
+    <link href="../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
+    <style>
+        .nform li span {
+            width: 28%;
+        }
+
+        .simpletable thead tr th {
+            background: #9affe4;
+            border: solid 1px #fff;
+            height: 30px;
+            line-height: 30px;
+            font-weight: bold;
+            text-align: center;
+            text-indent: 0;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+
+<body style="padding:15px 8px 0px 8px;">
+
+<div class="">
+
+    <div class="table_top">
+        <table width="100%" height="100%">
+            <tbody>
+            <tr>
+                <td>
+                    <div class="head_left_button" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
+                        &#xe8e5; 转发
+                    </div>
+
+                    <div class="separation_line">
+
+                    </div>
+
+                    <div class="head_left_button" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
+                        &#xe990; 归档
+                    </div>
+
+                    <div class="separation_line">
+
+                    </div>
+
+                    <div class="head_left_button" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
+                        &#xeaa5; 删除
+                    </div>
+
+                    <div class="separation_line">
+
+                    </div>
+
+                    <div class="head_left_button" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
+                        &#xe8cb; 批处理
+                    </div>
+                </td>
+                <td>
+                    <div class="conditional_query">
+
+                        <!--标题-->
+                        <div id="div2" class="head_right_side_input matter_title">
+                            <input type="text">
+                        </div>
+
+                        <!--重要程度-->
+                        <div id="div3" class="head_right_side_select matter_importance">
+                            <select>
+                                <option value="1">普通</option>
+                                <option value="2">重要</option>
+                                <option value="3">非常重要</option>
+                            </select>
+                        </div>
+
+                        <!--发起人-->
+                        <div id="div4" class="head_right_side_input Initiator">
+                            <input type="text">
+                        </div>
+
+                        <!--状态-->
+                        <div id="div5" class="head_right_side_select matter_status">
+                            <select>
+                                <option value="1">未读</option>
+                                <option value="2">已读</option>
+                                <option value="3">暂存待办</option>
+                                <option value="4">被回退</option>
+                                <option value="5">指定回退</option>
+                            </select>
+                        </div>
+
+                        <!--条件查询-->
+                        <div id="div1" class="head_right_side">
+                            <select id="condition">
+                                <option value="0">- -查询条件- -</option>
+                                <option value="1">标题</option>
+                                <option value="2">重要程度</option>
+                                <option value="3">发起人</option>
+                                <option value="4">处理状态</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content_title">
+
+        <table class="simpletable" style="width: 2200px">
+
+            <thead>
+            <th style="width: 40px"><input type="checkbox"></th>
+            <th style="width: 70px ">预警级别</th>
+            <th style="width: 70px ">日期</th>
+            <th style="width: 70px">时间</th>
+            <th style="width: 70px">盘号</th>
+            <th style="width: 70px ">配比号</th>
+            <th style="width: 70px">骨料4</th>
+            <th style="width: 70px">骨料3</th>
+            <th style="width: 70px">骨料2</th>
+            <th style="width: 70px">骨料1</th>
+            <th style="width: 70px ">石粉2</th>
+            <th style="width: 70px ">沥青</th>
+            <th style="width: 100px">合计(kg)</th>
+            <th style="width: 100px ">1仓温度</th>
+            <th style="width: 100px ">混合料温度</th>
+            <th style="width: 100px ">除尘器入口温度</th>
+            <th style="width: 100px ">沥青温度</th>
+            <th style="width: 100px ">骨料温度</th>
+            <th style="width: 100px ">每锅总量</th>
+            <th style="width: 100px ">石料总重</th>
+            <th style="width: 100px ">石料1比例</th>
+            <th style="width: 100px ">石料2比例</th>
+            <th style="width: 100px ">石料3比例</th>
+            <th style="width: 100px ">石料4比例</th>
+            <th style="width: 100px ">粉料比例</th>
+            <th style="width: 100px ">沥青含量</th>
+            <th style="width: 10px"></th>
+            </thead>
+
+            <tbody>
+            <tr></tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>3</td>
+                <td>6月10日</td>
+                <td>20:13:28</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1543</td>
+                <td>2783</td>
+                <td>3344</td>
+                <td>4636</td>
+                <td>126.1</td>
+                <td>235.5</td>
+                <td>4997.6</td>
+                <td>176</td>
+                <td>104</td>
+                <td>88</td>
+                <td>134</td>
+                <td>182</td>
+                <td>4997.6</td>
+                <td>4636</td>
+                <td>25.85</td>
+                <td>11.23</td>
+                <td>24.81</td>
+                <td>30.87</td>
+                <td>2.52</td>
+                <td>4.71</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/skin.js"></script>
+
+<script type="text/javascript">
+
+    /* 预定撤销 - 查询条件*/
+    $("#condition").on("change", function () {
+        var opt = $("#condition").val();
+        if (opt == 1) {
+            $(".matter_title").css("display", "block");
+            $(".matter_importance  , .matter_status ,.Initiator").css("display", "none");
+        } else if (opt == 2) {
+            $(".matter_importance").css("display", "block");
+            $(".matter_title  , .matter_status ,.Initiator").css("display", "none");
+        } else if (opt == 3) {
+            $(".Initiator").css("display", "block");
+            $(".matter_title  , .matter_importance,.matter_status").css("display", "none");
+        } else if (opt == 4) {
+            $(".matter_status").css("display", "block");
+            $(".matter_title  , .matter_importance,.Initiator").css("display", "none");
+        } else {
+            $(".head_right_side_input").css("display", "none");
+            $(".head_right_side_select").css("display", "none");
+        }
+    });
+
+    //撤销按钮 选中颜色
+    function select_color(itself) {
+        itself.style.background = "#fff";
+    }
+
+    //撤销按钮 未选中颜色
+    function unselected_color(itself) {
+        itself.style.background = "#f1f1f1";
+    }
+</script>
+</html>
