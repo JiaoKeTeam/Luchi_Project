@@ -29,13 +29,10 @@ li {
 /*}*/
 
 .wrapper {
-    width: 520px;
+    width: 100%;
     float: left;
     height: 270px;
     overflow: hidden;
-    margin: 7px auto;
-    margin-left: 7px;
-    /*background:red;*/
     position: relative;
     border-radius: 5px;
 }
@@ -92,12 +89,13 @@ li {
 }
 
 .carousel {
-    padding-left: 36%;
-    width: 100%;
     position: absolute;
-    bottom: -6px;
     text-align: center;
     font-size: 0;
+    left: 80%;
+    width: 100px;
+    height: 38px;
+    line-height: 50px;
 }
 
 .carousel li {
@@ -217,7 +215,8 @@ li {
 
 .h_g_m {
     height: 30px;
-    border-bottom: #b7b7b7 solid 1px;
+    border-bottom: #d0d0d0 solid 1px;
+    margin-left: 30px;
 }
 
 .h_g_m ul li.tab_y a {
@@ -280,12 +279,8 @@ li {
 }
 
 .h_g_c {
-    padding-top: 10px;
+    padding-top: 5px;
     overflow: hidden;
-}
-
-.h_g_c ul {
-    padding-right: 34px;
 }
 
 .h_g_c ul li {
@@ -305,8 +300,9 @@ li {
 .h_g_height {
     float: left;
     height: 32px;
-    padding-left: 25px;
     overflow: hidden;
+    width: 50%;
+    margin-top: 20px;
 }
 
 .h_tt_t {
@@ -317,16 +313,15 @@ li {
 .h_1_b {
     overflow: hidden;
     position: relative;
-    padding-left: 25px;
-    width: 400px;
-    height: 260px;
+    padding-left: 5%;
+    height: 100%;
 }
 
 .h_1_b > div {
     overflow: hidden;
     position: absolute;
-    width: 400px;
-    height: 260px;
+    width: 95%;
+    height: 100%;
 }
 
 #h_ddd {
@@ -363,25 +358,121 @@ li {
 
 .div_left {
     float: left;
-    width: 39%;
+    width: 50%;
     height: 270px;
+    margin: 20px 0;
 }
 
 .div_left1 {
     float: left;
-    width: 33%;
-    height: 270px;
+    width: 50%;
+    height: 240px;
+    margin-bottom: 20px;
 }
 
 .div_left2 {
     float: left;
-    width: 28%;
-    height: 270px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .infolist1 {
-    padding: 0px 7px 8px 7px;
     clear: both;
     width: 65%;
     float: left;
+    margin-bottom: 20px;
+}
+
+.achievement li {
+    float: left;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+li.mainPic {
+    width: 430px;
+    height: 251px;
+}
+
+li.smallPic {
+    width: 162px;
+    height: 123px;
+    margin: 0 0 5px 5px;
+}
+
+li.middlePic {
+    width: 330px;
+    height: 123px;
+    margin: 0 0 5px 5px;
+}
+
+.achievement li span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 29px;
+    line-height: 29px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.cont ul li a img {
+    width: 100%;
+    height: 100%;
+}
+
+.footBox {
+    background-color: #e8e9e8;
+    padding: 32px 0;
+}
+
+.foot {
+    clear: both;
+    overflow: hidden;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.contactUs, .code, .netPic, .truck {
+    float: left;
+}
+
+.contactUs {
+    width: 355px;
+    margin-right: 160px;
+    border-right: #999 dotted 1px;
+}
+
+.foot h4 {
+    font: 100 18px/26px "Microsoft YaHei";
+    padding-bottom: 14px;
+}
+
+.contactUs li:nth-child(1) {
+    background: url(../../images/test/ico5.gif) left center no-repeat;
+    padding-left: 47px;
+}
+
+.code {
+    text-align: center;
+    color: #999;
+    margin-right: 125px;
+}
+
+.code p:nth-child(1) {
+    border: #fff 3px solid;
+}
+
+.code {
+    text-align: center;
+    color: #999;
+    margin-right: 125px;
+}
+
+.contactUs li {
+    line-height: 22px;
+    color: #999;
 }
