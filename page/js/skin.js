@@ -1,7 +1,7 @@
 /**
- * JSÊµÏÖ»»·ô¹¦ÄÜ
+ * JSå®ç°æ¢è‚¤åŠŸèƒ½
  */
-// Google ChromeÖ»Ö§³ÖÔÚÏßÍøÕ¾µÄcookieµÄ¶ÁĞ´²Ù×÷£¬¶Ô±¾µØhtmlµÄcookie²Ù×÷ÊÇ½ûÖ¹µÄ¡£
+// Google Chromeåªæ”¯æŒåœ¨çº¿ç½‘ç«™çš„cookieçš„è¯»å†™æ“ä½œï¼Œå¯¹æœ¬åœ°htmlçš„cookieæ“ä½œæ˜¯ç¦æ­¢çš„ã€‚
 // name1=value1;name2=value2;name3=value3;name4=value4
 function Skin(options) {
 
@@ -32,7 +32,7 @@ Skin.prototype = {
                 self._doSthing(attr);
             });
         });
-        // ÅĞ¶ÏÊÇ·ñÊÇ¹È¸èÓÎÀÀÆ÷ ¹È¸èÓÎÀÀÆ÷ÒòÎª²»Ö§³ÖcookieÔÚ±¾µØÉÏ´æ´¢ ËùÒÔÒıÈëÁËHTML5
+        // åˆ¤æ–­æ˜¯å¦æ˜¯è°·æ­Œæ¸¸è§ˆå™¨ è°·æ­Œæ¸¸è§ˆå™¨å› ä¸ºä¸æ”¯æŒcookieåœ¨æœ¬åœ°ä¸Šå­˜å‚¨ æ‰€ä»¥å¼•å…¥äº†HTML5
         if (window.navigator.userAgent.indexOf("Chrome") !== -1) {
             var tempCookeie = self._loadStorage("skinName"),
                 t;
@@ -49,9 +49,7 @@ Skin.prototype = {
         }
 
     },
-    /*
-     * ½øĞĞÅĞ¶Ï À´ÉèÖÃcssÑùÊ½
-     */
+    // è¿›è¡Œåˆ¤æ–­ æ¥è®¾ç½®cssæ ·å¼
     _doSthing: function (attr) {
         var self = this,
             _config = self.config,
@@ -72,9 +70,7 @@ Skin.prototype = {
         }
 
     },
-    /*
-     * ¸Ä±äÑùÊ½
-     */
+    //æ”¹å˜æ ·å¼
     _setSkin: function (skinValue) {
 
         var self = this,
@@ -90,23 +86,17 @@ Skin.prototype = {
         }
 
     },
-    /*
-     * ÖØĞÂ
-     */
+    //é‡æ–°
     _doStorage: function (attr) {
         var self = this;
         self._saveStorage(attr);
     },
-    /*
-     * html5»ñÈ¡±¾µØ´æ´¢
-     */
+    // html5è·å–æœ¬åœ°å­˜å‚¨
     _loadStorage: function (attr) {
         var str = localStorage.getItem(attr);
         return str;
     },
-    /*
-     * HTML5±¾µØ´æ´¢
-     */
+    //HTML5æœ¬åœ°å­˜å‚¨
     _saveStorage: function (skinValue) {
         var self = this;
         localStorage.setItem("skinName", skinValue);
@@ -147,12 +137,12 @@ Skin.prototype = {
     _removeCookie: function (name) {
         var self = this;
 
-        //µ÷ÓÃ_setCookie()º¯Êı,ÉèÖÃÎª1Ìì¹ıÆÚ,¼ÆËã»ú×Ô¶¯É¾³ı¹ıÆÚcookie
+        //è°ƒç”¨_setCookie()å‡½æ•°,è®¾ç½®ä¸º1å¤©è¿‡æœŸ,è®¡ç®—æœºè‡ªåŠ¨åˆ é™¤è¿‡æœŸcookie
         self._setCookie(name, 1, 1);
     }
 };
 
-// ³õÊ¼»¯
+// åˆå§‹åŒ–
 $(function () {
     new Skin({});
 });

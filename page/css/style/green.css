@@ -102,7 +102,7 @@ a:hover {
 }
 
 .tab li.tabcurrent a {
-    color: #f5f9ff;
+    color: #000000;
 }
 
 .step li.stepcurrent {
@@ -119,5 +119,13 @@ a:hover {
 }
 
 .select_ul li.cur {
+    background: #f5f9ff;
+}
+
+.nav{
+    background: #f5f9ff;
+}
+
+.nav-mini.nav .nav-item ul {
     background: #f5f9ff;
 }

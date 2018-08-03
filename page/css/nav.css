@@ -30,7 +30,7 @@ a {
     width: 180px;
     min-height: 100%;
     height: auto;
-    background: #367448;
+    /*background: #367448;*/
     transition: all .3s;
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@ a {
     padding-left: 20px;
     line-height: 40px;
     max-height: 40px;
-    color: #ffffff;
+    /*color: #ffffff;*/
     transition: all .3s;
 }
 
@@ -61,7 +61,7 @@ a {
 
 .nav-item ul {
     display: none;
-    background: rgba(0, 0, 0, .1);
+    /*background: rgba(0, 0, 0, .1);*/
 }
 
 .nav-item.nav-show ul {
@@ -72,11 +72,11 @@ a {
     content: "";
     position: absolute;
     left: 0px;
-    width: 2px;
+    width: 99%;
     height: 40px;
-    background: #34A0CE;
     opacity: 0;
     transition: all .3s;
+    box-shadow: 1px 1px 5px 0px #a7a7a7;
 }
 
 .nav .nav-icon {
@@ -118,8 +118,8 @@ a {
 }
 
 .nav-show, .nav-item > a:hover {
-    color: #FFF;
-    background: rgba(0, 0, 0, .1);
+    /*color: #FFF;*/
+    /*background: rgba(0, 0, 0, .1);*/
 }
 
 .nav-show > a:before, .nav-item > a:hover:before {
@@ -127,7 +127,7 @@ a {
 }
 
 .nav-item li:hover a {
-    color: #FFF;
+    /*color: #FFF;*/
     background: rgba(0, 0, 0, .1);
 }
 
@@ -153,7 +153,7 @@ a {
     left: 60px;
     width: 160px;
     z-index: 99;
-    background: #367448;
+    /*background: #367448;*/
     overflow: hidden;
 }
 
