@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>路驰公司企业综合管理平台</title>
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!--loginbox start-->
+
+<div class="login-title" style="width: 100%;height: 80px;">
+    <div class="login-title-content" style="height: 80px;width: 80%;margin: 0 auto">
+        <div>
+            <img src="../images/login-logo.jpg" alt="" style="height: 60px;padding: 10px 0">
+            <span style="height: 50px;font-size: 17px;line-height:  80px;position: absolute;margin-left: 20px">路驰管理后台</span>
+        </div>
+    </div>
+</div>
+<div class="bg-div">
+    <div class="signin">
+        <div class="dowebok">
+            <div class="logo">
+                <span>账号登录</span>
+            </div>
+
+            <div class="login-form">
+                <form>
+                    <div class="login_input_content">
+                        <div class="left-icon"><img src="../images/username.png" alt=""></div>
+                        <input type="text" class="right-input">
+                    </div>
+                    <div class="login_input_content">
+                        <div class="left-icon"><img src="../images/password.png" alt=""></div>
+                        <input type="password" class="right-input">
+                    </div>
+                    <div class="login_input_content">
+                        <button type="button" class="login-but" id="submit">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--loginbox end-->
+
+</body>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/skin.js"></script>
+<script type="text/javascript">
+    var height = $(window).height();
+    $(".login").css("padding-top", height / 2 - $(".login").height() / 2);
+    $(window).resize(function () {
+        $(".login").css("padding-top", $(window).height() / 2 - $(".login").height() / 2);
+    });
+
+    $('#submit').on('click', function () {
+        window.location.href = "../view/main.html";
+    })
+</script>
+</html>
