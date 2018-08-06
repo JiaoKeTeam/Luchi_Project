@@ -7,7 +7,7 @@ html, body {
 .bg-div {
     background: url('../images/login-diagram .jpg') center;
     width: 100%;
-    height: 640px;
+    height: 530px;
     background-size: 100% 100%;
     top: 0;
     left: 0;
@@ -212,6 +212,19 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
+.login-bottom{
+    width: 700px;
+    height: 60px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-bottom-copyright{
+    width: 100%;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
 .tip {
     display: none;
     position: absolute;
@@ -294,4 +307,22 @@ input::-webkit-input-placeholder {
     .form-item input, .form-item button, .reg-bar {
         width: 100%;
     }
+}
+
+/*overflow滚动条样式*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E5E8EC;
+    background-clip: padding-box;
+    border: 1px solid #E6E5E6;
+    min-height: 28px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
 }
