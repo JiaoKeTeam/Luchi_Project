@@ -1,12 +1,15 @@
 @charset "utf-8";
+
 /* CSS Document */
+
+
 /***
  * uimaker
  * http://www.uimaker.com
  * e-mail: admin@uimaker.com
  */
-@import url(style/green.css);
 
+@import url(style/green.css);
 * {
     font-size: 12px;
     border: 0;
@@ -38,13 +41,17 @@ img {
     border: 0;
 }
 
-dl, dt, dd, span {
+dl,
+dt,
+dd,
+span {
     margin: 0;
     padding: 0;
     display: block;
 }
 
-a, a:focus {
+a,
+a:focus {
     text-decoration: none;
     color: #000;
     outline: none;
@@ -60,14 +67,18 @@ table {
     border-spacing: 0;
 }
 
+
 /*font_1*/
+
 @font-face {
     font-family: "iconfont";
-    src: url('../fonts/font_1/iconfont.eot'); /* IE9*/
+    src: url('../fonts/font_1/iconfont.eot');
+    /* IE9*/
     src: url('../fonts/font_1/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
     url('../fonts/font_1/iconfont.woff') format('woff'), /* chrome, firefox */
     url('../fonts/font_1/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('../fonts/font_1/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+    url('../fonts/font_1/iconfont.svg#iconfont') format('svg');
+    /* iOS 4.1- */
 }
 
 .iconfont {
@@ -93,8 +104,8 @@ table {
 }
 
 
-
 /*login*/
+
 .loginlogo {
     background: url(../images/luchi.jpg) no-repeat center center;
     height: 58px;
@@ -145,7 +156,8 @@ table {
     position: relative;
 }
 
-.loginuser, .loginpassword {
+.loginuser,
+.loginpassword {
     width: 303px;
     height: 40px;
     background: #fff;
@@ -192,7 +204,9 @@ table {
     float: left;
 }
 
+
 /*header*/
+
 .header {
     background: #f1f1f1;
     position: relative;
@@ -275,7 +289,8 @@ table {
     padding: 0 10px;
 }
 
-.user a:hover, .skin a:hover {
+.user a:hover,
+.skin a:hover {
     background: url(../images/navbg.png);
     color: #000000;
 }
@@ -585,7 +600,9 @@ table {
     padding-left: 200px;
 }
 
+
 /*left*/
+
 .left {
     border-right: solid 0px #bfbfbf;
     overflow: hidden;
@@ -618,7 +635,9 @@ table {
     background: #f1f1f1;
 }
 
+
 /*right*/
+
 .right {
     float: left;
     width: 100%;
@@ -676,8 +695,11 @@ table {
     color: #7e7e7e;
 }
 
+
 /*form*/
-.forminput, .search {
+
+.forminput,
+.search {
     height: 26px;
     border: solid 1px #c6c6c6;
     line-height: 26px;
@@ -745,7 +767,9 @@ table {
     top: 2px;
 }
 
+
 /*toolbar*/
+
 .toolbar {
     padding-top: 15px;
     overflow: hidden;
@@ -772,7 +796,8 @@ table {
     background: #f1f1f1;
 }
 
-.toolbar li a.selected, .toolbar li a.selected:hover {
+.toolbar li a.selected,
+.toolbar li a.selected:hover {
     color: #fff;
 }
 
@@ -780,7 +805,9 @@ table {
     padding-right: 5px;
 }
 
+
 /*table*/
+
 .tablebox {
     padding-top: 9px;
 }
@@ -825,7 +852,9 @@ table {
     text-indent: 0;
 }
 
+
 /*pagination*/
+
 .pagination {
     padding-top: 8px;
 }
@@ -862,8 +891,9 @@ table {
     color: #858585;
 }
 
-.pagelist li a.selected, .pagelist li a.selected:hover {
-    color: #fff;
+.pagelist li a.selected,
+.pagelist li a.selected:hover {
+    color: rgb(102, 78, 78);
 }
 
 .pageinfo {
@@ -873,7 +903,9 @@ table {
     color: #8d8d8d;
 }
 
+
 /*footer*/
+
 .footer {
     height: 21px;
     background: #f1f1f1;
@@ -901,7 +933,9 @@ table {
     font-size: 11px;
 }
 
+
 /*default*/
+
 .divcl {
     float: left;
 }
@@ -917,7 +951,7 @@ table {
     width: 49.66%;
 }
 
-.listbox{
+.listbox {
     border: solid 1px #d6d6d6;
     height: 70px;
     width: 170px;
@@ -962,13 +996,15 @@ table {
     border: solid 1px #d6d6d6;
     height: 228px;
 }
-.chartbox4{
+
+.chartbox4 {
     float: left;
-    margin-left:8px;
+    margin-left: 8px;
     width: 32%;
-    border:solid 1px#d6d6d6; 
-    height:327px;
+    border: solid 1px#d6d6d6;
+    height: 327px;
 }
+
 .infolist {
     padding: 8px 8px 0 8px;
     clear: both;
@@ -1102,7 +1138,9 @@ table {
     right: 20px;
 }
 
+
 /*form*/
+
 .formtable {
     border: solid 1px #d4d4d4;
     border-bottom: none;
@@ -1169,7 +1207,9 @@ table {
     cursor: pointer;
 }
 
+
 /*404*/
+
 .box404 {
     width: 354px;
     height: 255px;
@@ -1238,7 +1278,9 @@ table {
     background: #f1f1f1;
 }
 
+
 /*calendar*/
+
 .datetitle {
     height: 35px;
     line-height: 35px;
@@ -1320,7 +1362,8 @@ table {
     color: #737373;
 }
 
-.noday, .noday span {
+.noday,
+.noday span {
     color: #b8b8b8;
 }
 
@@ -1372,7 +1415,8 @@ table {
     white-space: nowrap;
 }
 
-.noday, .noday span {
+.noday,
+.noday span {
     color: #b8b8b8;
 }
 
@@ -1381,11 +1425,14 @@ table {
     font-weight: bold;
 }
 
-.today, .today span {
+.today,
+.today span {
     color: #227447;
 }
 
+
 /*tab*/
+
 .tab {
     background: #f1f1f1;
     height: 34px;
@@ -1411,7 +1458,8 @@ table {
     color: #000;
 }
 
-.website, .userinfo {
+.website,
+.userinfo {
     padding: 25px;
     border: solid 1px #d4d4d4;
     border-top: none;
@@ -1535,7 +1583,9 @@ table {
     color: #fff;
 }
 
+
 /*other*/
+
 .infotext {
     height: 37px;
     line-height: 37px;
@@ -1595,7 +1645,9 @@ table {
     line-height: 25px;
 }
 
+
 /*select*/
+
 .select {
     position: relative;
     min-width: 134px;
@@ -1661,7 +1713,7 @@ table {
     width: 133px;
 }
 
-.sswidth > .select_ul {
+.sswidth>.select_ul {
     width: 133px;
 }
 
@@ -1669,7 +1721,9 @@ table {
     float: left;
 }
 
+
 /*chart*/
+
 .chartbox1 {
     border: solid 1px #d6d6d6;
 }
@@ -1705,14 +1759,18 @@ table {
     margin-left: 4px;
 }
 
+
 /*calendardiv*/
+
 .calendardiv {
     width: 240px;
     height: 400px;
     float: right;
 }
 
+
 /* 公文*/
+
 .form_area {
     padding-top: 10px;
     margin-bottom: 10px;
@@ -1827,11 +1885,14 @@ table {
     margin-right: 3px;
 }
 
-.head_right_side, .head_right_side_input, .head_right_side_select {
+.head_right_side,
+.head_right_side_input,
+.head_right_side_select {
     float: right;
 }
 
-.head_right_side_input, .head_right_side_select {
+.head_right_side_input,
+.head_right_side_select {
     display: none;
 }
 
@@ -1854,7 +1915,9 @@ table {
     margin: 5px 5px;
 }
 
+
 /*新建会议*/
+
 .new_meeting_common {
     text-align: right;
     padding-right: 5px;
@@ -1940,12 +2003,16 @@ table {
     overflow-y: scroll;
 }
 
+
 /* for Chrome 只针对谷歌浏览器*/
+
 .inner-container::-webkit-scrollbar {
     display: none;
 }
 
+
 /*删除弹窗*/
+
 #window_background_color {
     width: 1366px;
     height: 675px;
@@ -2009,7 +2076,9 @@ table {
     border-radius: 5px;
 }
 
+
 /*日志弹窗*/
+
 .log_popup {
     position: absolute;
     z-index: 9999;
@@ -2039,6 +2108,7 @@ table {
     height: 350px;
 }
 
+
 /*实时监控DIV */
 
 .infolist_realtime {
@@ -2057,12 +2127,70 @@ table {
     float: left;
 }
 
-.div_top{
+.div_top {
     height: 450px;
     width: 100%;
 }
 
-.wrap{
+.wrap {
     width: 1100px;
     margin: 0 auto;
+}
+
+//弹窗样式
+.popup_back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.popup_window_first {
+    width: 280px;
+    height: 150px;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    background: rgb(115, 91, 138);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.popup_window_first .popup_cont {
+    width: 100%;
+    height: 76%;
+    line-height: 110px;
+    border-bottom: 1px solid #d6c9c9;
+}
+
+.popup_window_first .popup_btn {
+    /*display: block;*/
+    display: inline-block;
+    margin: 0 auto;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    color: #694040;
+    background: #cebbbb;
+    border-radius: 5px;
+}
+
+.btn_click {
+    display: block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
 }
