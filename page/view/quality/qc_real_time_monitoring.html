@@ -10,7 +10,7 @@
     <script src="../../js/echarts/uimaker.js"></script>
 </head>
 
-<body style="padding:15px 8px 20px 8px;">
+<body style="padding:15px 8px 1000px 8px;">
 
     <div class="infolist_realtime" style="padding-right:70px;">
 
@@ -299,332 +299,171 @@
         </script>
     </div>
     </li>
+<div class="divbox_realtime">
+    <div>
+        <div class="boxtitle">
 
-    <div class="divbox">
-        <div>
-            <div class="boxtitle">
-                <span class="span_realtime">一号炉实时填料称重图</span>
-            </div>
-            <div id="chart2" class="charts1"></div>
         </div>
-
-        <script type="text/javascript">
-            // 基于准备好的dom，初始化echarts实例
-            var myChart2 = echarts.init(document.getElementById('chart2'), 'uimaker');
-            // 指定图表的配置项和数据
-            option2 = {
-                tooltip: {
-                    trigger: 'item',
-                    textStyle: {
-                        fontSize: 14
-                    },
-                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                    }
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        dataView: {
-                            show: true,
-                            readOnly: false
-                        },
-                        magicType: {
-                            show: true,
-                            type: ['line', 'bar']
-                        },
-                        restore: {
-                            show: true
-                        },
-                        saveAsImage: {
-                            show: true
-                        }
-                    }
-                },
-                grid: {
-                    x: 60,
-                    x2: 40,
-                    y: 10,
-                    height: 140
-                },
-                calculable: true,
-                xAxis: [{
-                    type: 'category',
-                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00"]
-                }],
-                yAxis: [{
-                    type: 'value',
-                    name: '单位: %',
-                    nameTextStyle: {
-                        color: 'rgba(255,64,104,0.5)',
-                    },
-                    axisLabel: {
-                        formatter: '{value} %',
-                        textStyle: {
-                            color: 'rgba(255,64,104,0.5)',
-                        }
-                    },
-                    splitLine: {
-                        show: true,
-                        lineStyle: {
-                            type: "dotted",
-                            color: ["rgba(255,60,104,.1)"]
-                        }
-                    }
-                }],
-                series: [{
-                        name: '骨料',
-                        type: 'bar',
-                        data: [32, 20, 10, 60, 70, 50, 45],
-                        markLine: {
-                            itemStyle: {
-                                normal: {
-                                    color: '#FA8565',
-                                    label: {
-                                        formatter: '{c}%'
-                                    }
-                                }
-                            },
-                            data: [{
-                                type: 'line',
-                                yAxis: 80,
-                                formatter: '{c}%'
-                            }]
-                        }
-                    }, {
-                        name: '添加剂',
-                        type: 'bar',
-                        stack: '广告',
-                        data: [20, 30, 40, 50, 60, 40, 20],
-                        markLine: {
-                            itemStyle: {
-                                normal: {
-                                    color: '#FA8565',
-                                    label: {
-                                        formatter: '{c}%'
-                                    }
-                                }
-                            },
-                            data: [{
-                                type: 'line',
-                                yAxis: 70,
-                                formatter: '{c}%'
-                            }]
-                        }
-                    }, {
-                        name: '沥青',
-                        type: 'bar',
-                        data: [80, 90, 20, 80, 45, 60, 75],
-                        markLine: {
-                            itemStyle: {
-                                normal: {
-                                    color: '#FA8565',
-                                    label: {
-                                        formatter: '{c}%'
-                                    }
-                                }
-                            },
-                            data: [{
-                                type: 'line',
-                                yAxis: 60,
-                                formatter: '{c}%'
-                            }]
-                        }
-                    }, {
-                        name: '石料',
-                        type: 'bar',
-                        barWidth: 5,
-                        stack: '石料',
-                        data: [56, 37, 40, 61, 80, 73, 66],
-                        markLine: {
-                            itemStyle: {
-                                normal: {
-                                    color: '#FA8565',
-                                    label: {
-                                        formatter: '{c}%'
-                                    }
-                                }
-                            },
-                            data: [{
-                                type: 'line',
-                                yAxis: 50,
-                                Sformatter: '{c}%'
-                            }]
-                        }
-                    },
-
-                ]
-            };
-            // 使用刚指定的配置项和数据显示图表。
-            myChart2.setOption(option2);
-            window.addEventListener("resize", function() {
-                myChart2.resize();
-            });
-        </script>
+        <div id="chart2" class="charts1"></div>
     </div>
 
-    <div class="divbox">
-        <div>
-            <div class="boxtitle">
-                <span class="span_realtime">二号号炉实时填料称重图</span>
-            </div>
-            <div id="chart4" class="charts1"></div>
+    <script type="text/javascript">
+        var myChart2 = echarts.init(document.getElementById('chart2'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option2 = {
+            title: {
+                text: '产品材料构成曲线图',
+                subtext: ''
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['模板占比', '实际占比']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    dataView: { readOnly: false },
+                    magicType: { type: ['line', 'bar'] },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['石料', '石料1', '石料2', '粉料', '沥青', '骨料', '骨料一']
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+            series: [
+                {
+                    name: '模板占比',
+                    type: 'line',
+                    data: [11, 11, 15, 13, 12, 13, 10],
+                    formatter: '{value} %',
+                    markPoint: {
+
+                        data: [
+                            { type: 'max', name: '最大值' },
+                            { type: 'min', name: '最小值' }
+                        ]
+                    }
+                },
+                {
+                    name: '实际占比',
+                    type: 'line',
+                    data: [1, 2, 2, 5, 3, 2, 0],
+                    markPoint: {
+                        data: [
+                            { type: 'max', name: '最大值' },
+                            { type: 'min', name: '最小值' }
+                        ]
+                    }
+                }
+            ]
+        };
+
+
+
+        myChart2.setOption(option2);
+        window.addEventListener("resize", function () {
+            myChart2.resize();
+        });
+    </script>
+</div>
+
+<div class="divbox_realtime">
+    <div>
+        <div class="boxtitle">
+
         </div>
-
-        <script type="text/javascript">
-            // 基于准备好的dom，初始化echarts实例
-            var myChart4 = echarts.init(document.getElementById('chart4'), 'uimaker');
-            // 指定图表的配置项和数据
-            option4 = {
-                tooltip: {
-                    trigger: 'item',
-                    textStyle: {
-                        fontSize: 14
-                    },
-                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                    }
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        dataView: {
-                            show: true,
-                            readOnly: false
-                        },
-                        magicType: {
-                            show: true,
-                            type: ['line', 'bar']
-                        },
-                        restore: {
-                            show: true
-                        },
-                        saveAsImage: {
-                            show: true
-                        }
-                    }
-                },
-                grid: {
-                    x: 60,
-                    x2: 40,
-                    y: 10,
-                    height: 140
-                },
-                calculable: true,
-                xAxis: [{
-                    type: 'category',
-                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00"]
-                }],
-                yAxis: [{
-                    type: 'value',
-                    name: '单位: %',
-                    nameTextStyle: {
-                        color: 'rgba(255,64,104,0.5)',
-                    },
-                    axisLabel: {
-                        formatter: '{value} %',
-                        textStyle: {
-                            color: 'rgba(255,64,104,0.5)',
-                        }
-                    },
-                    splitLine: {
-                        show: true,
-                        lineStyle: {
-                            type: "dotted",
-                            color: ["rgba(255,60,104,.1)"]
-                        }
-                    }
-                }],
-                series: [{
-                    name: '骨料',
-                    type: 'bar',
-                    data: [32, 20, 10, 60, 70, 50, 45],
-                    markLine: {
-                        itemStyle: {
-                            normal: {
-                                color: '#FA8565',
-                                label: {
-                                    formatter: '{c}%'
-                                }
-                            }
-                        },
-                        data: [{
-                            type: 'line',
-                            yAxis: 80,
-                            formatter: '{c}%'
-                        }]
-                    }
-                }, {
-                    name: '添加剂',
-                    type: 'bar',
-                    stack: '广告',
-                    data: [20, 30, 40, 50, 60, 40, 20],
-                    markLine: {
-                        itemStyle: {
-                            normal: {
-                                color: '#FA8565',
-                                label: {
-                                    formatter: '{c}%'
-                                }
-                            }
-                        },
-                        data: [{
-                            type: 'line',
-                            yAxis: 70,
-                            formatter: '{c}%'
-                        }]
-                    }
-
-                }, {
-                    name: '沥青',
-                    type: 'bar',
-                    data: [80, 90, 20, 80, 45, 60, 75],
-                    markLine: {
-                        itemStyle: {
-                            normal: {
-                                color: '#FA8565',
-                                label: {
-
-                                    formatter: '{c}%'
-                                }
-                            }
-                        },
-                        data: [{
-                            type: 'line',
-                            yAxis: 60,
-                            formatter: '{c}%'
-                        }]
-                    }
-                }, {
-                    name: '石料',
-                    type: 'bar',
-                    barWidth: 5,
-                    stack: '石料',
-                    data: [56, 37, 40, 61, 80, 73, 66],
-                    markLine: {
-                        itemStyle: {
-                            normal: {
-                                color: '#FA8565',
-                                label: {
-                                    formatter: '{c}%'
-                                }
-                            }
-                        },
-                        data: [{
-                            type: 'line',
-                            yAxis: 50,
-                            Sformatter: '{c}%'
-                        }]
-                    }
-                }, ]
-            };
-            // 使用刚指定的配置项和数据显示图表。
-            myChart4.setOption(option4);
-            window.addEventListener("resize", function() {
-                myChart4.resize();
-            });
-        </script>
+        <div id="chart4" class="charts1"></div>
     </div>
+
+    <script type="text/javascript">
+        var myChart4 = echarts.init(document.getElementById('chart4'));
+        // 指定图表的配置项和数据
+        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        var option4 = {
+            title: {
+                text: '产品材料构成曲线图',
+                subtext: ''
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['模板占比', '实际占比']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    dataView: { readOnly: false },
+                    magicType: { type: ['line', 'bar'] },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['石料', '石料1', '石料2', '粉料', '沥青', '骨料', '骨料一']
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+            series: [
+                {
+                    name: '模板占比',
+                    type: 'line',
+                    data: [11, 11, 15, 13, 12, 13, 10],
+                    formatter: '{value} %',
+                    markPoint: {
+
+                        data: [
+                            { type: 'max', name: '最大值' },
+                            { type: 'min', name: '最小值' }
+                        ]
+                    }
+                },
+                {
+                    name: '实际占比',
+                    type: 'line',
+                    data: [1, 2, 2, 5, 3, 2, 0],
+                    markPoint: {
+                        data: [
+                            { type: 'max', name: '最大值' },
+                            { type: 'min', name: '最小值' }
+                        ]
+                    }
+                }
+            ]
+        };
+
+
+
+        myChart4.setOption(option4);
+        window.addEventListener("resize", function () {
+            myChart4.resize();
+        });
+    </script>
+</div>
 
 </body>
 <script type="text/javascript" src="../../js/jquery.js"></script>
