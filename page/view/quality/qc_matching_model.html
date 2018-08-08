@@ -13,7 +13,7 @@
 
 
     <ul class="toolbar">
-        <li><a href="#"><i class="toolico iconfont">&#xe7e9;</i>新建</a></li>
+        <li><a href="#" id="from_click" ><i class="toolico iconfont">&#xe7e9;</i>新建</a></li>
         <li><a href="#" id="btn_click"><i class="toolico iconfont">&#xe7ea;</i>删除</a></li>
         <li>
             <a href="../../download/commons-io-2.4-src.zip" download="commons-io-2.4-src.zip">
@@ -213,8 +213,8 @@
         <a href="javascript:void(0)" class="popup_btn" onclick="closeWindow();">取消</a>
     </div>
     <!--新建弹出-->
-    <div class="form_background" ></div>
-        <div class="form_model" >
+    <div class="form_background"  style="display:none;" ></div>
+        <div class="form_model" style="display:none;" >
             <form>
                 <table class="form_table">
             
@@ -223,51 +223,51 @@
                         <tr>
                             <td class="tlabels">配比名称：</td>
                             <td colspan="3">
-                                <input type="text" style="width: 94%;" class="forminput inputstyle" style="width: 72%;" value="孙中山">
+                                <input type="text" style="width: 94%;" class="forminput inputstyle" style="width: 72%;" value="cl-17沥青模板"">
                             </td>
                         </tr>
             
                         <tr>
                             <td class="tlabels">1#仓：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="孙中山">
+                                <input type="text" class="forminput inputstyle" value="3">
                             </td>
                             <td class="tlabels">2#仓：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="孙中山">
+                                <input type="text" class="forminput inputstyle" value="5">
                             </td>
                         </tr>
             
                         <tr>
                             <td class="tlabels">3#仓：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="孙中山">
+                                <input type="text" class="forminput inputstyle" value="17">
                             </td>
                             <td class="tlabels">4#仓：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="sunzhongshan">
+                                <input type="text" class="forminput inputstyle" value="35">
                             </td>
                         </tr>
             
                         <tr>
                             <td class="tlabels">5#仓：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="孙中山">
+                                <input type="text" class="forminput inputstyle" value="75">
                             </td>
                             <td class="tlabels">6#仓：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="sunzhongshan">
+                                <input type="text" class="forminput inputstyle" value="85">
                             </td>
                         </tr>
             
                         <tr>
                             <td class="tlabels">矿粉：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="孙中山">
+                                <input type="text" class="forminput inputstyle" value="5">
                             </td>
                             <td class="tlabels">油石比：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="sunzhongshan">
+                                <input type="text" class="forminput inputstyle" value="1.2">
                             </td>
                         </tr>
             
@@ -275,22 +275,22 @@
                         <tr>
                             <td class="tlabels">沥青加热温度：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="18652072457">
+                                <input type="text" class="forminput inputstyle" value="157">
                             </td>
                             <td class="tlabels">骨料加热温度：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="025-85423587">
+                                <input type="text" class="forminput inputstyle" value="152">
                             </td>
                         </tr>
             
                         <tr>
                             <td class="tlabels">混合料出厂温度：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="18652072457">
+                                <input type="text" class="forminput inputstyle" value="52">
                             </td>
                             <td class="tlabels">铣刨料加热温度：</td>
                             <td>
-                                <input type="text" class="forminput inputstyle" value="025-85423587">
+                                <input type="text" class="forminput inputstyle" value="37">
                             </td>
                         </tr>
             
@@ -333,7 +333,7 @@
             
                 <div class="form_btn">
                     <input type="button" value="保存" class="btn_save">
-                    <input type="button" value="重置" class="btn_cancel">
+                    <input type="button" onclick="closefrom()" value="关闭" class="btn_cancel">
                 </div>
             
             </form>
@@ -365,11 +365,20 @@
 
     $('select.select').select();
 
+    //点击弹出删除按钮
     function closeWindow() {
         $('.popup_back,.popup_window_first').hide();
     }
     $('#btn_click').click(function() {
         $('.popup_window_first,.popup_back').show();
+    });
+    
+    //点击弹出添加模板
+    function closefrom() {
+            $('.form_background,.form_model').hide();
+    }
+    $('#from_click').click(function () {
+        $('.form_background,.form_model').show();
     });
 </script>
 

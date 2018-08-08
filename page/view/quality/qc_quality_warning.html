@@ -11,13 +11,13 @@
 
 <body style="padding:15px 8px 500px 8px;">
 
-<div class="divbox">
+<div >
 
-    <div class="">
-        <div class="boxtitle"><span>一号炉实时数据预警</span></div>
-
-        <div class="boxdown">
-            <table class="simpletable">
+    <div >
+        <div class="boxtitle"><span>一号机组实时数据预警</span></div>
+    </div>
+    <div >
+            <table class="warning_table">
             
                 <thead>
                     <th>生产日期</th>
@@ -32,7 +32,7 @@
             
                 <tbody>
             
-                    <tr>
+                    <tr class="warning_table_even" >
                         <td>20171101</td>
                         <td>8:35</td>
                         <td>256</td>
@@ -52,9 +52,9 @@
                     </tr>
                 </tbody>
             </table>
-
-
-            <table class="simpletable">
+    </div>
+    <div class="div_container" >
+            <table class="warning_table">
 
                 <thead>
                 <th>材料</th>
@@ -66,7 +66,7 @@
 
                 <tbody>
 
-                <tr class="even" >
+                <tr class="warning_table_even" >
                     <td>沥青</td>
                     <td>20<i>%</i></td>
                     <td>10<i>%</i></td>
@@ -76,7 +76,7 @@
                 </tr>
 
 
-                <tr class="even" >
+                <tr class="warning_table_even" >
                     <td>石料</td>
                     <td>15<i>%</i></td>
                     <td>10<i>%</i></td>
@@ -86,7 +86,7 @@
                 </tr>
 
 
-                <tr class="even" >
+                <tr class="warning_table_even" >
                     <td>骨料</td>
                     <td>30<i>%</i></td>
                     <td>21<i>%</i></td>
@@ -96,7 +96,7 @@
                 </tr>
 
 
-                <tr class="even" >
+                <tr class="warning_table_even" >
                     <td>石料1</td>
                     <td>40<i>%</i></td>
                     <td>30<i>%</i></td>
@@ -105,7 +105,7 @@
 
                 </tr>
 
-                <tr class="even" >
+                <tr class="warning_table_even" >
                     <td>骨料2</td>
                     <td>30<i>%</i></td>
                     <td>10<i>%</i></td>
@@ -114,7 +114,7 @@
 
                 </tr>
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>骨料3</td>
                     <td>10
                         <i>%</i>
@@ -128,7 +128,7 @@
                     <td>一级</td>
                 </tr>
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>添加剂</td>
                     <td>20
                         <i>%</i>
@@ -143,7 +143,7 @@
                 </tr>
 
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>添加剂</td>
                     <td>20
                         <i>%</i>
@@ -158,7 +158,7 @@
                 </tr>
 
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>1仓温度</td>
                     <td>159
                         <i>℃</i>
@@ -173,7 +173,7 @@
                 </tr>
 
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>混合料温度</td>
                     <td>35
                         <i>℃</i>
@@ -187,7 +187,7 @@
                     <td>一级</td>
                 </tr>
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>除尘器入口温度</td>
                     <td>71
                         <i>℃</i>
@@ -201,7 +201,7 @@
                     <td>一级</td>
                 </tr>
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>沥青温度</td>
                     <td>158
                         <i>℃</i>
@@ -216,7 +216,7 @@
                 </tr>
 
 
-                <tr class="even">
+                <tr class="warning_table_even">
                     <td>骨料温度</td>
                     <td>184
                         <i>℃</i>
@@ -232,278 +232,35 @@
                 </tbody>
 
             </table>
-        </div>
-
     </div>
-</div>
+    <div class="div_echar">
+        
+        <li style="margin-top: 60px;">
 
-<div class="">
-    <div class="">
-        <div class="boxtitle">
-            <span>二号炉实时数据预警</span>
-        </div>
+            <div>
 
-        <div class="boxdown">
-            <table class="simpletable">
-        
-                <thead>
-                    <th>生产日期</th>
-                    <th>生产时间</th>
-                    <th>配比号</th>
-                    <th>车号</th>
-                    <th>盘号</th>
-                    <th>生产人</th>
-                    <th>客户号</th>
-                    <th>操作</th>
-                </thead>
-        
-                <tbody>
-        
-                    <tr>
-                        <td>20171101</td>
-                        <td>8:35</td>
-                        <td>256</td>
-                        <td>京C66666</td>
-                        <td>A16</td>
-                        <td>王建军</td>
-                        <td>1554568791</td>
-                        <td>
-        
-                            <li>
-                                <a href="#">
-                                    <i class="toolico iconfont">&#xe6eb;</i>导出</a>
-                            </li>
-        
-                        </td>
-        
-                    </tr>
-                </tbody>
-            </table>
-        
-        
-            <table class="simpletable">
-        
-                <thead>
-                    <th>材料</th>
-                    <th>模板配比</th>
-                    <th>实际配比</th>
-                    <th>偏差比</th>
-                    <th>预警级别</th>
-                </thead>
-        
-                <tbody>
-        
-                    <tr class="even">
-                        <td>沥青</td>
-                        <td>20
-                            <i>%</i>
-                        </td>
-                        <td>10
-                            <i>%</i>
-                        </td>
-                        <td>10
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-        
-                    </tr>
-        
-        
-                    <tr class="even">
-                        <td>石料</td>
-                        <td>15
-                            <i>%</i>
-                        </td>
-                        <td>10
-                            <i>%</i>
-                        </td>
-                        <td>5
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-        
-                    </tr>
-        
-        
-                    <tr class="even">
-                        <td>骨料</td>
-                        <td>30
-                            <i>%</i>
-                        </td>
-                        <td>21
-                            <i>%</i>
-                        </td>
-                        <td>9
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-        
-                    </tr>
-        
-        
-                    <tr class="even">
-                        <td>石料1</td>
-                        <td>40
-                            <i>%</i>
-                        </td>
-                        <td>30
-                            <i>%</i>
-                        </td>
-                        <td>10
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-        
-                    </tr>
-        
-                    <tr class="even">
-                        <td>骨料2</td>
-                        <td>30
-                            <i>%</i>
-                        </td>
-                        <td>10
-                            <i>%</i>
-                        </td>
-                        <td>20
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-        
-                    </tr>
-        
-                    <tr class="even">
-                        <td>骨料3</td>
-                        <td>10
-                            <i>%</i>
-                        </td>
-                        <td>7
-                            <i>%</i>
-                        </td>
-                        <td>3
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-                    </tr>
-        
-                    <tr class="even">
-                        <td>添加剂</td>
-                        <td>20
-                            <i>%</i>
-                        </td>
-                        <td>17
-                            <i>%</i>
-                        </td>
-                        <td>3
-                            <i>%</i>
-                        </td>
-                        <td>一级</td>
-                    </tr>
-
-                <tr class="even">
-                    <td>1仓温度</td>
-                    <td>159
-                        <i>℃</i>
-                    </td>
-                    <td>150
-                        <i>℃</i>
-                    </td>
-                    <td>9
-                        <i>℃</i>
-                    </td>
-                    <td>一级</td>
-                </tr>
+                <div class="boxtitle">
+                    <span>当前产品材料构成曲线图</span>  
+                </div>
+                <div id="chart" class="charts1"></div>
                 
-                
-                <tr class="even">
-                    <td>混合料温度</td>
-                    <td>35
-                        <i>℃</i>
-                    </td>
-                    <td>28
-                        <i>℃</i>
-                    </td>
-                    <td>30
-                        <i>℃</i>
-                    </td>
-                    <td>一级</td>
-                </tr>
-                
-                <tr class="even">
-                    <td>除尘器入口温度</td>
-                    <td>71
-                        <i>℃</i>
-                    </td>
-                    <td>65
-                        <i>℃</i>
-                    </td>
-                    <td>6
-                        <i>℃</i>
-                    </td>
-                    <td>一级</td>
-                </tr>
-                
-                <tr class="even">
-                    <td>沥青温度</td>
-                    <td>158
-                        <i>℃</i>
-                    </td>
-                    <td>120
-                        <i>℃</i>
-                    </td>
-                    <td>38
-                        <i>℃</i>
-                    </td>
-                    <td>二级</td>
-                </tr>
-                
-                
-                <tr class="even">
-                    <td>骨料温度</td>
-                    <td>184
-                        <i>℃</i>
-                    </td>
-                    <td>165
-                        <i>℃</i>
-                    </td>
-                    <td>19
-                        <i>℃</i>
-                    </td>
-                    <td>二级</td>
-                </tr>
-                </tbody>
-        
-            </table>
-        </div>
-
-    </div>
-</div>
-
-
-<div class="divbox_realtime">
-
-    <li>
-
-        <div>
-            <div class="boxtitle">
-
             </div>
-            <div id="chart" class="charts1"></div>
-        </div>
 
-        <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('chart'));
-            // 指定图表的配置项和数据
-            var colors = ['#5793f3', '#d14a61', '#675bba'];
-            var option = {
+            <script type="text/javascript">
+                var myChart = echarts.init(document.getElementById('chart'));
+                // 指定图表的配置项和数据
+                var colors = ['#5793f3', '#d14a61', '#675bba'];
+                var option = {
                     title: {
-                        text: '一号机组构成曲线图',
+                        text: '',
                         subtext: ''
                     },
                     tooltip: {
                         trigger: 'axis'
                     },
                     legend: {
-                        data: ['模板占比', '实际占比']
+                        data: ['模板占比', '实际占比'],
+                        x: 'left'
                     },
                     toolbox: {
                         show: true,
@@ -557,101 +314,366 @@
                 };
 
 
-            setInterval(function () { //把option.series[0].data[0].value的值使用random()方法获取一个随机数
-                option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
-                myChart.setOption(option, true);
-            }, 2000);
-            myChart.setOption(option);
-            window.addEventListener("resize", function () {
-                myChart.resize();
-            });
-        </script>
+                setInterval(function () { //把option.series[0].data[0].value的值使用random()方法获取一个随机数
+                    option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+                    myChart.setOption(option, true);
+                }, 2000);
+                myChart.setOption(option);
+                window.addwarning_table_EventListener("resize", function () {
+                    myChart.resize();
+                });
+            </script>
+        </li>
+    </div>
+ 
+
 </div>
-</li>
 
+<div>
 
-<div class="divbox_realtime">
     <div>
         <div class="boxtitle">
-
+            <span>一号机组实时数据预警</span>
         </div>
-        <div id="chart2" class="charts1"></div>
     </div>
+    <div>
+        <table class="warning_table">
 
-    <script type="text/javascript">
-        var myChart2 = echarts.init(document.getElementById('chart2'));
-        // 指定图表的配置项和数据
-        var colors = ['#5793f3', '#d14a61', '#675bba'];
-        var option2 =  {
-                title: {
-                    text: '二号机组构成曲线图',
-                    subtext: ''
-                },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data: ['模板占比', '实际占比']
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        dataZoom: {
-                            yAxisIndex: 'none'
-                        },
-                        dataView: { readOnly: false },
-                        magicType: { type: ['line', 'bar'] },
-                        restore: {},
-                        saveAsImage: {}
-                    }
-                },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['石料', '石料1', '石料2', '粉料', '沥青', '骨料', '骨料一']
-                },
-                yAxis: {
-                    type: 'value',
-                    axisLabel: {
-                        formatter: '{value} %'
-                    }
-                },
-                series: [
-                    {
-                        name: '模板占比',
-                        type: 'line',
-                        data: [11, 11, 15, 13, 12, 13, 10],
-                        formatter: '{value} %',
-                        markPoint: {
+            <thead>
+                <th>生产日期</th>
+                <th>生产时间</th>
+                <th>配比号</th>
+                <th>车号</th>
+                <th>盘号</th>
+                <th>生产人</th>
+                <th>客户号</th>
+                <th>操作</th>
+            </thead>
 
-                            data: [
-                                { type: 'max', name: '最大值' },
-                                { type: 'min', name: '最小值' }
-                            ]
+            <tbody>
+
+                <tr class="warning_table_even">
+                    <td>20171101</td>
+                    <td>8:35</td>
+                    <td>256</td>
+                    <td>京C66666</td>
+                    <td>A16</td>
+                    <td>王建军</td>
+                    <td>1554568791</td>
+                    <td>
+
+                        <li>
+                            <a href="#">
+                                <i class="toolico iconfont">&#xe6eb;</i>导出</a>
+                        </li>
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="div_container">
+        <table class="warning_table">
+
+            <thead>
+                <th>材料</th>
+                <th>模板配比</th>
+                <th>实际配比</th>
+                <th>偏差比</th>
+                <th>预警级别</th>
+            </thead>
+
+            <tbody>
+
+                <tr class="warning_table_even">
+                    <td>沥青</td>
+                    <td>20
+                        <i>%</i>
+                    </td>
+                    <td>10
+                        <i>%</i>
+                    </td>
+                    <td>10
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>石料</td>
+                    <td>15
+                        <i>%</i>
+                    </td>
+                    <td>10
+                        <i>%</i>
+                    </td>
+                    <td>5
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>骨料</td>
+                    <td>30
+                        <i>%</i>
+                    </td>
+                    <td>21
+                        <i>%</i>
+                    </td>
+                    <td>9
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>石料1</td>
+                    <td>40
+                        <i>%</i>
+                    </td>
+                    <td>30
+                        <i>%</i>
+                    </td>
+                    <td>10
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+
+                </tr>
+
+                <tr class="warning_table_even">
+                    <td>骨料2</td>
+                    <td>30
+                        <i>%</i>
+                    </td>
+                    <td>10
+                        <i>%</i>
+                    </td>
+                    <td>20
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+
+                </tr>
+
+                <tr class="warning_table_even">
+                    <td>骨料3</td>
+                    <td>10
+                        <i>%</i>
+                    </td>
+                    <td>7
+                        <i>%</i>
+                    </td>
+                    <td>3
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+                </tr>
+
+                <tr class="warning_table_even">
+                    <td>添加剂</td>
+                    <td>20
+                        <i>%</i>
+                    </td>
+                    <td>17
+                        <i>%</i>
+                    </td>
+                    <td>3
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>添加剂</td>
+                    <td>20
+                        <i>%</i>
+                    </td>
+                    <td>17
+                        <i>%</i>
+                    </td>
+                    <td>3
+                        <i>%</i>
+                    </td>
+                    <td>一级</td>
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>1仓温度</td>
+                    <td>159
+                        <i>℃</i>
+                    </td>
+                    <td>150
+                        <i>℃</i>
+                    </td>
+                    <td>9
+                        <i>℃</i>
+                    </td>
+                    <td>一级</td>
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>混合料温度</td>
+                    <td>35
+                        <i>℃</i>
+                    </td>
+                    <td>28
+                        <i>℃</i>
+                    </td>
+                    <td>30
+                        <i>℃</i>
+                    </td>
+                    <td>一级</td>
+                </tr>
+
+                <tr class="warning_table_even">
+                    <td>除尘器入口温度</td>
+                    <td>71
+                        <i>℃</i>
+                    </td>
+                    <td>65
+                        <i>℃</i>
+                    </td>
+                    <td>6
+                        <i>℃</i>
+                    </td>
+                    <td>一级</td>
+                </tr>
+
+                <tr class="warning_table_even">
+                    <td>沥青温度</td>
+                    <td>158
+                        <i>℃</i>
+                    </td>
+                    <td>120
+                        <i>℃</i>
+                    </td>
+                    <td>38
+                        <i>℃</i>
+                    </td>
+                    <td>二级</td>
+                </tr>
+
+
+                <tr class="warning_table_even">
+                    <td>骨料温度</td>
+                    <td>184
+                        <i>℃</i>
+                    </td>
+                    <td>165
+                        <i>℃</i>
+                    </td>
+                    <td>19
+                        <i>℃</i>
+                    </td>
+                    <td>二级</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="div_echar">
+
+        <li style="margin-top: 60px;">
+
+            <div>
+
+                <div class="boxtitle">
+                    <span>当前产品材料构成曲线图</span>
+                </div>
+                <div id="chart2" class="charts1"></div>
+
+            </div>
+
+            <script type="text/javascript">
+                var myChart2 = echarts.init(document.getElementById('chart2'));
+                // 指定图表的配置项和数据
+                var colors = ['#5793f3', '#d14a61', '#675bba'];
+                var option2 = {
+                    title: {
+                        text: '',
+                        subtext: ''
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['模板占比', '实际占比'],
+                        x: 'left'
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataZoom: {
+                                yAxisIndex: 'none'
+                            },
+                            dataView: { readOnly: false },
+                            magicType: { type: ['line', 'bar'] },
+                            restore: {},
+                            saveAsImage: {}
                         }
                     },
-                    {
-                        name: '实际占比',
-                        type: 'line',
-                        data: [1, 2, 2, 5, 3, 2, 0],
-                        markPoint: {
-                            data: [
-                                { type: 'max', name: '最大值' },
-                                { type: 'min', name: '最小值' }
-                            ]
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['石料', '石料1', '石料2', '粉料', '沥青', '骨料', '骨料一']
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            formatter: '{value} %'
                         }
-                    }
-                ]
-            };
+                    },
+                    series: [
+                        {
+                            name: '模板占比',
+                            type: 'line',
+                            data: [11, 11, 15, 13, 12, 13, 10],
+                            formatter: '{value} %',
+                            markPoint: {
+
+                                data: [
+                                    { type: 'max', name: '最大值' },
+                                    { type: 'min', name: '最小值' }
+                                ]
+                            }
+                        },
+                        {
+                            name: '实际占比',
+                            type: 'line',
+                            data: [1, 2, 2, 5, 3, 2, 0],
+                            markPoint: {
+                                data: [
+                                    { type: 'max', name: '最大值' },
+                                    { type: 'min', name: '最小值' }
+                                ]
+                            }
+                        }
+                    ]
+                };
 
 
-        myChart2.setOption(option2);
-        window.addEventListener("resize", function () {
-            myChart2.resize();
-        });
-    </script>
+                myChart2.setOption(option2);
+                window.addwarning_table_EventListener("resize", function () {
+                    myChart2.resize();
+                });
+            </script>
+        </li>
+    </div>
+
+
 </div>
-</li>
 
 
 </body>
