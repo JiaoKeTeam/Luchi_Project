@@ -4,7 +4,6 @@
  * uimaker
  * http://www.uimaker.com
  * e-mail: admin@uimaker.com/
-
 /*color*/
 a:hover {
     color: #929292;
@@ -49,8 +48,8 @@ a:hover {
 }
 
 .pagelist li a.selected, .pagelist li a.selected:hover {
-    background: #f5f9ff;
-    border: solid 1px #f5f9ff;
+    background: #939ca9;
+    border: solid 1px #748aab
 }
 
 .layui-layer-btn .layui-layer-btn0 {
@@ -71,12 +70,12 @@ a:hover {
 }
 
 .formtable td a {
-    color: #f5f9ff;
+    color: #b19292;
 }
 
 .btnsave {
-    background: #f5f9ff;
-    border: solid 1px #f5f9ff;
+    background: #d3d3d3;
+    border: solid 1px #a0a5ab;
 }
 
 .btnstyle {

@@ -205,106 +205,70 @@
         var myChart2 = echarts.init(document.getElementById('chart2'));
         // 指定图表的配置项和数据
         var colors = ['#5793f3', '#d14a61', '#675bba'];
-        var option2 = {
-            color: colors,
-            title: {
-                text: '产品材料模板对比图',
-                subtext: '材料构成',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'none',
-                axisPointer: {
-                    type: 'cross'
-                }
-            },
-            toolbox: {
-                show: true,
-                feature: {
-                    dataView: { show: true, readOnly: false },
-                    magicType: { show: true, type: ['line', 'bar'] },
-                    restore: { show: true },
-                    saveAsImage: { show: true }
-                }
-            },
-            legend: {
-                data: ['标准数据', '实际数据']
-            },
-            grid: {
-                top: 70,
-                bottom: 50
-            },
-            xAxis: [
-                {
-                    type: 'category',
-                    axisTick: {
-                        alignWithLabel: true
-                    },
-                    axisLine: {
-                        onZero: false,
-                        lineStyle: {
-                            color: colors[1]
-                        }
-                    },
-                    axisPointer: {
-                        label: {
-                            formatter: function (params) {
-                                return '实际温度 ' + params.value
-                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                            }
-                        }
-                    },
-                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
+        var option2 =  {
+                title: {
+                    text: '产品材料构成曲线图',
+                    subtext: ''
                 },
-                {
-                    type: 'category',
-                    axisTick: {
-                        alignWithLabel: true
-                    },
-                    axisLine: {
-                        onZero: false,
-                        lineStyle: {
-                            color: colors[0]
-                        }
-                    },
-                    axisPointer: {
-                        label: {
-                            formatter: function (params) {
-                                return '标准温度  ' + params.value
-                                    + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                            }
-                        }
-                    },
-                    data: [" 8:00", "8:10", "8:20", "8:30", "8:40", "8:50", "9:00", "9:10", "9:20", "9:30", "9:40", "9:50"]
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: [
-                {
-                    name: '实际温度 ',
-                    type: 'line',
-                    xAxisIndex: 1,
-                    smooth: true,
-                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                tooltip: {
+                    trigger: 'axis'
                 },
-                {
-                    name: '标准温度',
-                    type: 'line',
-                    smooth: true,
-                    data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
-                }
-            ]
-        };
+                legend: {
+                    data: ['模板占比', '实际占比']
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataZoom: {
+                            yAxisIndex: 'none'
+                        },
+                        dataView: { readOnly: false },
+                        magicType: { type: ['line', 'bar'] },
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['石料', '石料1', '石料2', '粉料', '沥青', '骨料', '骨料一']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value} %'
+                    }
+                },
+                series: [
+                    {
+                        name: '模板占比',
+                        type: 'line',
+                        data: [11, 11, 15, 13, 12, 13, 10],
+                        formatter: '{value} %',
+                        markPoint: {
+                            
+                            data: [
+                                { type: 'max', name: '最大值' },
+                                { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    },
+                    {
+                        name: '实际占比',
+                        type: 'line',
+                        data: [1, 2, 2, 5, 3, 2, 0],
+                        markPoint: {
+                            data: [
+                                { type: 'max', name: '最大值' },
+                                { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    }
+                ]
+            };
 
 
-            setInterval(function () {//把option.series[0].data[0].value的值使用random()方法获取一个随机数
-                option2.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
-                myChart2.setOption(option2, true);
-            }, 2000);
+            
             myChart2.setOption(option2);
             window.addEventListener("resize", function () {
                 myChart2.resize();
