@@ -3,288 +3,335 @@
 <head>
     <meta charset="utf-8">
     <title>个人考勤</title>
-    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
-    <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
-    <script src="../../../js/echarts/echarts.js"></script>
-    <script src="../../../js/echarts/uimaker.js"></script>
+    <link href="../../../css/oa/oa_common.css" rel="stylesheet" type="text/css">
 </head>
 
-<body style="padding:0px 8px 70px 8px;">
+<style>
+    .simpletables {
+        width: 100%;
+    }
 
+    .simpletables thead tr th {
+        font-weight: bold;
+        background: #f7f7f7;
+        text-align: center;
+        white-space: nowrap;
+        border: solid 1px #bdbdbd;
+        padding: 10px 8px;
+        height: 32px;
+    }
 
-<div class="divbox">
+    .simpletables tbody tr td {
+        line-height: 30px;
+        white-space: nowrap;
+        text-align: center;
+        border: solid 1px #bdbdbd;
+        padding: 20px 8px;
+    }
 
-    <div class="">
-        <div class="boxdown">
-            <table class="simpletable">
+    .simpletables a:hover {
+        color: #000;
+    }
 
-                <thead>
-                <th>员工编号</th>
-                <th>所属部门</th>
-                <th>打卡时间</th>
-                <th>打卡方式</th>
-                <th>打卡人</th>
-                <th>操作</th>
+    .date_header_item {
+        position: relative;
+        height: 52px;
+        margin: -24px -8px;
+    }
+
+    .date_header_item_week {
+        position: absolute;
+        bottom: 2px;
+        right: 14px;
+    }
+
+    .date_header_item_date {
+        position: absolute;
+        top: 8px;
+        left: 14px;
+    }
+
+    .photocopy_style {
+        box-shadow: 6px 0 6px -4px rgba(0, 0, 0, .2);
+        left: 7px;
+    }
+
+    .tr:hover {
+        background: #f5f9ff;
+    }
+</style>
+<body style="padding:15px 8px 0 8px;">
+
+<div class="formal-workers">
+
+    <div style="height: 30px;width: 100%">
+        <table width="100%" height="100%">
+            <tbody>
+            <tr>
+                <td>
+                    <ul class="tab-switch" id="tab">
+                        <li name="website" class="tabcurrent"><a href="javascript:;">导出报表</a></li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="rrr" style="overflow-x: scroll;position: relative;max-height: 500px;" onscroll="myFunction()">
+
+        <table class="simpletables" id="aaa" style="margin-top: 30px;position: relative;width: 2360px;">
+            <colgroup>
+                <col style="width: 120px; min-width: 120px;">
+                <col style="width: 200px;min-width: 200px;">
+                <col style="width: 140px; min-width: 140px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 90px; min-width: 90px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+                <col style="width: 80px; min-width: 80px;">
+            </colgroup>
+            <thead>
+            <tr>
+                <th class=""><span><div style="text-align: center;">姓名</div></span></th>
+                <th class=""><span><div style="text-align: center;">部门</div></span></th>
+                <th class=""><span><div style="text-align: center;">工号</div></span></th>
+                <th class=""><span><div style="text-align: center;">职位</div></span></th>
+                <th class=""><span><div style="text-align: center;">出勤天数</div></span></th>
+                <th class=""><span><div style="text-align: center;">休息天数</div></span></th>
+                <th class=""><span><div style="text-align: center;">工作时长</div></span></th>
+                <th class=""><span><div style="text-align: center;">迟到次数</div></span></th>
+                <th class=""><span><div style="text-align: center;">迟到时长</div></span></th>
+                <th class=""><span><div style="text-align: center;">严重迟到次数</div></span></th>
+                <th class=""><span><div style="text-align: center;">严重迟到时长</div></span></th>
+                <th class=""><span><div style="text-align: center;">旷工迟到天数</div></span></th>
+                <th class=""><span><div style="text-align: center;">早退次数</div></span></th>
+                <th class=""><span><div style="text-align: center;">早退时长</div></span></th>
+                <th class=""><span><div style="text-align: center;">上班缺卡次数</div></span></th>
+                <th class=""><span><div style="text-align: center;">下班缺卡次数</div></span></th>
+                <th class=""><span><div style="text-align: center;">旷工天数</div></span></th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">三</div>
+                            <div class="date_header_item_date">1</div>
+                        </div>
+                    </span>
+                </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">四</div>
+                            <div class="date_header_item_date">2</div>
+                        </div>
+                    </span>
+                </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">五</div>
+                            <div class="date_header_item_date">3</div>
+                        </div>
+                    </span>
+                </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">六</div>
+                            <div class="date_header_item_date">4</div>
+                        </div>
+                    </span>
+                </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">日</div>
+                            <div class="date_header_item_date">5</div>
+                        </div>
+                    </span>
+                </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">一</div>
+                            <div class="date_header_item_date">6</div>
+                        </div>
+                    </span>
+                </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">二</div>
+                            <div class="date_header_item_date">7</div>
+                        </div>
+                    </span>
+                </th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr></tr>
+            <tr class="even">
+            <tr class="tr">
+                <td>张三</td>
+                <td>生产经营部</td>
+                <td>008</td>
+                <td>施工管理</td>
+                <td>20</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+                <td>32分钟</td>
+                <td>1</td>
+                <td>19分钟</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>正常</td>
+                <td>正常</td>
+                <td>正常</td>
+                <td>休息</td>
+                <td>休息</td>
+                <td>旷工</td>
+                <td>正常</td>
+                <td>正常</td>
+            </tr>
+            <tr class="tr">
+                <td>张三</td>
+                <td>运营部</td>
+                <td>010</td>
+                <td>工程师</td>
+                <td>20</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+                <td>32分钟</td>
+                <td>1</td>
+                <td>19分钟</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>正常</td>
+                <td>正常</td>
+                <td>正常</td>
+                <td>休息</td>
+                <td>休息</td>
+                <td>旷工</td>
+                <td>正常</td>
+                <td>正常</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <!--表左边固定-->
+    <div class="ant-table-fixed-left"
+         style="position: absolute;top: 85px;overflow: hidden;transition: box-shadow .3s ease;border-radius: 0;left: 7px;">
+        <div class="ant-table-header">
+            <table class="ant-table-fixed">
+                <colgroup>
+                    <col style="width: 120px; min-width: 120px;">
+                </colgroup>
+                <thead class="ant-table-thead">
+                <tr style="height:53px;border-bottom: none;border: 1px #bdbebd solid;background: #f8f7f7;">
+                    <th class="">
+                        <span>
+                            <div style="text-align: center;">姓名</div>
+                        </span>
+                    </th>
+                </tr>
                 </thead>
-
-                <tbody>
-
-                <tr>
-                    <td>20171101</td>
-                    <td>256</td>
-                    <td>2017-11-01 16:35:26</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171102</td>
-                    <td>300</td>
-                    <td>2017-11-02 10:50:08</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171103</td>
-                    <td>500</td>
-                    <td>2017-11-03 00:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171104</td>
-                    <td>1000</td>
-                    <td>2017-11-04 16:22:00</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171105</td>
-                    <td>200</td>
-                    <td>2017-11-05 04:00:00</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171106</td>
-                    <td>150</td>
-                    <td>2017-11-06 18:20:10</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171107</td>
-                    <td>450</td>
-                    <td>2017-11-07 08:34:00</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                <tr>
-
-                    <td>20171108</td>
-                    <td>500</td>
-                    <td>2017-11-08 19:00:14</td>
-                    <td>打卡机</td>
-                    <td>admin</td>
-                    <td>
-
-                        <a href="#" class="selected" id="add"><i class="toolico iconfont">&#xe643;</i>查看</a>
-                        <a href="#"><i class="toolico iconfont">&#xe7eb;</i>导出</a>
-
-                    </td>
-                </tr>
-
-                </tbody>
-
             </table>
         </div>
 
+        <div class="ant-table-body-outer">
+            <div class="ant-table-body-inner">
+                <table class="ant-table-fixed">
+                    <colgroup>
+                        <col style="width: 120px; min-width: 120px;">
+                    </colgroup>
+                    <tbody>
+                    <tr style="height: 70px;border: 1px #bdbebd solid;border-top: none;background: #fff;">
+                        <td class="">
+                            <span style="padding-left: 0px;"></span>
+                            <div style="text-align: center;">
+                                <div>张三</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 71px;border: 1px #bdbebd solid;border-top: none;background: #fff;">
+                        <td class="">
+                            <span style="padding-left: 0px;"></span>
+                            <div style="text-align: center;">
+                                <div>李四</div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-<div class="pagination">
-    <ul class="pagelist">
-        <li>
-            <a href="#" class="first">首页</a>
-        </li>
-        <li>
-            <a href="#" class="selected pageico">
-                <i class="iconfont">&#xe68a;</i>
-            </a>
-        </li>
-        <li>
-            <a href="#">1</a>
-        </li>
-        <li>
-            <a href="#">2</a>
-        </li>
-        <li>
-            <a href="#">3</a>
-        </li>
-        <li>
-            <a href="#">4</a>
-        </li>
-        <li>
-            <a href="#">5</a>
-        </li>
-        <li>
-            <a href="#">6</a>
-        </li>
-        <li>
-            <a href="#">7</a>
-        </li>
-        <li>
-            <a href="#">8</a>
-        </li>
-        <li>
-            <a href="#">9</a>
-        </li>
-        <li>
-            <a href="#" class="pageico">
-                <i class="iconfont">&#xe673;</i>
-            </a>
-        </li>
-        <li>
-            <a href="#">尾页</a>
-        </li>
-    </ul>
 
-    <span class="pageinfo">共 50 条记录，每页 10 条，当前第 1 页，共 5 页</span>
 </div>
-
 
 </body>
 <script type="text/javascript" src="../../../js/jquery.js"></script>
 <script type="text/javascript" src="../../../js/common.js"></script>
 <script type="text/javascript" src="../../../js/skin.js"></script>
+<script>
+    $(function () {
+        var time = new Date();
+        var date = time.getDate();
+
+        var show_day = new Array('日', '一', '二', '三', '四', '五', '六');
+        var day = time.getDay();
+
+        //$("#aaa tr:first").append('<th class=""><span><div>' + show_day[day] + '</div><div>' + date + '</div></span></th>');
+        $("#aaa tr:first").append("<th class=''>" +
+            "<span>" +
+            "<div class='date_header_item'>" +
+            "<div class='date_header_item_week'>" + show_day[day] + "</div>" +
+            "<div class='date_header_item_date'>" + date + "</div>" +
+            "</div>" +
+            "</span>" +
+            "</th>");
+    });
+
+    //表左边固定的样式
+    function myFunction() {
+        var scrollLeft = $("#rrr").scrollLeft();
+        if (scrollLeft == 0) {
+            $('.ant-table-fixed-left').removeClass('photocopy_style');
+        } else {
+            $('.ant-table-fixed-left').addClass('photocopy_style');
+        }
+    }
+</script>
 </html>

@@ -54,7 +54,7 @@ $(function () {
     $("#wage_statistics").on("click", function () {
         removeOwnName();
         personal(this);
-        $('#oa-iframe').attr("src", "personal/oa_wage_statistics.html");
+        $('#oa-iframe').attr("src", "personal/oa_wage_statistics_inner.html");
     });
 
     //待办记事

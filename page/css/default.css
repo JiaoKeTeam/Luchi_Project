@@ -2137,7 +2137,7 @@ table {
     margin: 0 auto;
 }
 
-//弹窗样式
+/*弹窗样式*/
 .popup_back {
     position: fixed;
     top: 0;
@@ -2193,4 +2193,22 @@ table {
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
+}
+
+/*overflow滚动条样式*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E5E8EC;
+    background-clip: padding-box;
+    border: 1px solid #E6E5E6;
+    min-height: 28px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
 }

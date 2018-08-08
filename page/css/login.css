@@ -212,14 +212,14 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
-.login-bottom{
+.login-bottom {
     width: 700px;
     height: 60px;
     margin: 0 auto;
     text-align: center;
 }
 
-.login-bottom-copyright{
+.login-bottom-copyright {
     width: 100%;
     padding-top: 20px;
     font-size: 12px;
@@ -259,27 +259,27 @@ input::-webkit-input-placeholder {
 }
 
 .dowebok ::-webkit-input-placeholder {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.4;
-    color: #fff;
+    color: #dbddde;
 }
 
 .dowebok :-moz-placeholder {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.4;
-    color: #fff;
+    color: #dbddde;
 }
 
 .dowebok ::-moz-placeholder {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.4;
-    color: #fff;
+    color: #dbddde;
 }
 
 .dowebok :-ms-input-placeholder {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.4;
-    color: #fff;
+    color: #dbddde;
 }
 
 @media screen and (max-width: 500px) {

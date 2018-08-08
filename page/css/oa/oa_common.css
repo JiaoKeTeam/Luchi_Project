@@ -164,8 +164,7 @@ table {
     line-height: 30px;
     font-weight: bold;
     background: #fff;
-    text-align: left;
-    text-indent: 15px;
+    text-align: center;
     border: none;
     white-space: nowrap;
 }
@@ -180,13 +179,14 @@ table {
     text-indent: 15px;
     border: none;
     white-space: nowrap;
+    text-align: center;
 }
 
 .simpletable a:hover {
     color: #000;
 }
 
-.simpletable_color thead tr th{
+.simpletable_color thead tr th {
     background: #9affe4;
     border: solid 1px #fff;
 }
@@ -614,7 +614,7 @@ table {
     line-height: 22px;
     padding-left: 8px;
     color: #585858;
-    text-align:  center;
+    text-align: center;
 }
 
 .nforminput {
@@ -638,43 +638,58 @@ table {
     padding-bottom: 30px;
 }
 
-.news_headlines_left{
-    font-size: 20px;padding: 5px 10px;color: #919191;width: 500px;
+.news_headlines_left {
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #919191;
+    width: 500px;
 }
 
-.news_headlines_color{
+.news_headlines_color {
     background-color: #f1f1f1;
 }
 
-.news_headlines_left_content{
-    font-size: 18px;color: #6b6868;
-}
-.news_headlines_right{
-    width: 100% ;height: 100%;padding: 6px 0;
+.news_headlines_left_content {
+    font-size: 18px;
+    color: #6b6868;
 }
 
-.unit_news_title{
-    padding: 5px 0 5px 5px ; font-size: 10px; font-weight: 600;
+.news_headlines_right {
+    width: 100%;
+    height: 100%;
+    padding: 6px 0;
 }
 
-.unit_news_foot_left{
+.unit_news_title {
+    padding: 5px 0 5px 5px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.unit_news_foot_left {
     padding: 5px 5px 10px 5px;
 }
 
-.unit_news_margin{
-    float: left; padding: 5px 0px 5px 10px;
+.unit_news_margin {
+    float: left;
+    padding: 5px 0px 5px 10px;
 }
 
-.unit_news_margin_content{
-    font-size: 13px;color: #888888;
+.unit_news_margin_content {
+    font-size: 13px;
+    color: #888888;
 }
 
-.unit_news_foot_right{
-    float:right;padding:5px 10px 5px 0;
+.unit_news_foot_right {
+    float: right;
+    padding: 5px 10px 5px 0;
 }
 
-.press_release_button{
-    padding: 3px 5px;background: #ececec;border: 1px #000000 solid;margin-right: 10px;
+.press_release_button {
+    padding: 3px 5px;
+    background: #ececec;
+    border: 1px #000000 solid;
+    margin-right: 10px;
 }
 
 .th_title {
@@ -829,4 +844,94 @@ table {
 
 .nextlink:link {
     color: #fff;
+}
+
+.formal-workers {
+    padding: 10px 0;
+    border-top: none;
+    overflow: hidden;
+}
+
+.formal-workers-head {
+    height: 30px;
+    width: 100%;
+    background: #f1f1f1;
+    position: fixed;
+}
+
+.tab-switch {
+    background: #f1f1f1;
+    height: 28px;
+    border: solid 1px #d4d4d4;
+    width: 100px;
+    float: left;
+}
+
+.tab-switch li {
+    width: 60px;
+    float: left;
+    line-height: 28px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.tab li.tabcurrent {
+    font-weight: bold;
+    background: #fff;
+}
+
+.more-operation i {
+    width: 50px;
+    margin: 0 10px;
+    float: left;
+    text-align: center;
+    background: #f6f9ff;
+    border: 1px #dcdcdc solid;
+    line-height: 25px;
+    height: 25px;
+    margin-top: 2px;
+}
+
+.more-operation i:hover {
+    background-color: #fff;
+}
+
+.operation-content {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.operation-content a {
+    float: left;
+    width: 30px;
+}
+
+.operation-content span {
+    float: left;
+    margin: 0 10px;
+}
+
+.excel-upload{
+    height: 30px;
+    opacity: 0;
+    width: 102px;
+    position: absolute;
+}
+
+/*overflow滚动条样式*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E5E8EC;
+    background-clip: padding-box;
+    border: 1px solid #E6E5E6;
+    min-height: 28px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
 }
