@@ -1032,7 +1032,7 @@ table {
 }
 
 .inforight {
-    width: 33%;
+    width: 35%;
     height: 330px;
     float: left;
     margin-bottom: 20px;
@@ -2471,4 +2471,22 @@ table {
     height: 421px;
     margin: 12px 0px 3px 9px;
     background: #eef8f8;
+}
+
+/*overflow滚动条样式*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E5E8EC;
+    background-clip: padding-box;
+    border: 1px solid #E6E5E6;
+    min-height: 28px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
 }
