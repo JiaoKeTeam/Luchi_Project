@@ -601,10 +601,10 @@ table {
 
 .nform li span {
     text-align: right;
-    width: 100px;
     float: left;
     display: block;
     padding-right: 25px;
+    width: 28%;
 }
 
 /*form*/
@@ -911,7 +911,7 @@ table {
     margin: 0 10px;
 }
 
-.excel-upload{
+.excel-upload {
     height: 30px;
     opacity: 0;
     width: 102px;
@@ -934,4 +934,109 @@ table {
 
 ::-webkit-scrollbar-track-piece {
     background-color: #fff;
+}
+
+.derive-report {
+    height: 30px;
+    width: 100%
+}
+
+.attendance-list {
+    overflow-x: scroll;
+    position: relative;
+    max-height: 500px;
+}
+
+.attendance-list-content {
+    margin-top: 30px;
+    position: relative;
+    width: 2360px;
+}
+
+.attendance-list-content thead tr th {
+    font-weight: bold;
+    background: #f7f7f7;
+    text-align: center;
+    white-space: nowrap;
+    border: solid 1px #bdbdbd;
+    padding: 10px 8px;
+    height: 32px;
+}
+
+.attendance-list-content tbody tr td {
+    line-height: 30px;
+    white-space: nowrap;
+    text-align: center;
+    border: solid 1px #bdbdbd;
+    padding: 20px 8px;
+}
+
+.attendance-list-content a:hover {
+    color: #000;
+}
+
+.date_header_item {
+    position: relative;
+    height: 52px;
+    margin: -24px -8px;
+    width: 78px;
+}
+
+.date_header_item_week {
+    position: absolute;
+    bottom: 2px;
+    right: 14px;
+}
+
+.date_header_item_date {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+}
+
+.photocopy_style {
+    box-shadow: 6px 0 6px -4px rgba(0, 0, 0, .2);
+    left: 7px;
+}
+
+.tr:hover {
+    background: #f5f9ff;
+}
+
+.table-fixed-left {
+    position: absolute;
+    top: 75px;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
+    border-radius: 0;
+    left: 7px;
+}
+
+.ant-table-thead tr {
+    height: 53px;
+    border-bottom: none;
+    border: 1px #bdbebd solid;
+    background: #f8f7f7;
+}
+
+.ant-table-fixed tbody tr {
+    height: 70px;
+    border: 1px #bdbebd solid;
+    border-top: none;
+    background: #fff;
+}
+
+.chartbox3 {
+    border: solid 0px #d6d6d6;
+    margin-top: 40px;
+}
+
+.charts3 {
+    height: 300px;
+}
+
+.fixed{
+    position: fixed;
+    border: solid 0px #d6d6d6;
+    margin-top: 40px;
 }

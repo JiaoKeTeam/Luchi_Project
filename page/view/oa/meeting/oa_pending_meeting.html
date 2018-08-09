@@ -3,18 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>待开会议</title>
-    <link href="../../../css/default.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/oa/oa_common.css" rel="stylesheet" type="text/css">
     <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
-    <style>
-        .nform li span {
-            width: 28%;
-        }
-
-        .simpletable thead tr th {
-            background: #9affe4;
-            border: solid 1px #fff;
-        }
-    </style>
 </head>
 
 <body style="padding:15px 8px 0px 8px;">
@@ -40,7 +30,9 @@
                 </td>
                 <td>
                     <div class="conditional_query">
-
+                        <!--搜索按钮-->
+                        <i class="iconfont search" id="conditional_search" onmousemove="select_color(this)"
+                           onmouseout="unselected_color(this)">&#xe7e7;</i>
                         <!--会议名称-->
                         <div id="div2" class="head_right_side_input meeting_name">
                             <input type="text">
@@ -74,7 +66,7 @@
 
                         <!--条件查询-->
                         <div id="div1" class="head_right_side">
-                            <select id="condition">
+                            <select id="condition7">
                                 <option value="0">- -查询条件- -</option>
                                 <option value="1">会议名称</option>
                                 <option value="2">会议类型</option>
@@ -179,41 +171,6 @@
 <script type="text/javascript" src="../../../js/jquery.js"></script>
 <script type="text/javascript" src="../../../js/common.js"></script>
 <script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/oa/oa_common.js"></script>
 
-<script type="text/javascript">
-
-    /* 预定撤销 - 查询条件*/
-    $("#condition").on("change", function () {
-        var opt = $("#condition").val();
-        if (opt == 1) {
-            $(".meeting_name").css("display", "block");
-            $(".meeting_type  , .meeting_initiator ,.meeting_initiating_department , .meeting_state").css("display", "none");
-        } else if (opt == 2) {
-            $(".meeting_type").css("display", "block");
-            $(".meeting_name  , .meeting_initiator ,.meeting_initiating_department , .meeting_state").css("display", "none");
-        } else if (opt == 3) {
-            $(".meeting_initiator").css("display", "block");
-            $(".meeting_name  , .meeting_type ,.meeting_initiating_department , .meeting_state").css("display", "none");
-        } else if (opt == 4) {
-            $(".meeting_initiating_department").css("display", "block");
-            $(".meeting_name  , .meeting_type ,.meeting_initiator , .meeting_state").css("display", "none");
-        } else if (opt == 5) {
-            $(".meeting_state").css("display", "block");
-            $(".meeting_name  , .meeting_type ,.meeting_initiating_department , .meeting_initiating_department").css("display", "none");
-        } else {
-            $(".head_right_side_input").css("display", "none");
-            $(".head_right_side_select").css("display", "none");
-        }
-    });
-
-    //撤销按钮 选中颜色
-    function select_color(itself) {
-        itself.style.background = "#fff";
-    }
-
-    //撤销按钮 未选中颜色
-    function unselected_color(itself) {
-        itself.style.background = "#f1f1f1";
-    }
-</script>
 </html>

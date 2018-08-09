@@ -13,14 +13,54 @@ $("#top_toolbar_a").mousemove(function () {
     $(".top_toolbar_inside a").css("background", "#fff");
 });
 
-// 富文本
-var state = UM.getEditor('editor-state');
-state.setWidth("100%");
-$(".edui-body-container").css("background", "#FFF");
-$(".edui-body-container").css("height", "450px");
-
 $('select.select').select();
 
+/*搜索*/
+$('#conditional_search').on('click', function () {
+    location.reload();
+});
+
+//标记
+function flag(parameter) {
+    var currentColor = $(parameter).css('color');
+    var presetColor = 'rgb(255, 0, 0)';
+    if (currentColor == presetColor) {
+        var results = confirm("确定要删除标记吗？");
+        if (results) {
+            $(parameter).removeClass('flag_color');
+        }
+    } else {
+        var result = confirm("确定要标记吗？");
+        if (result) {
+            $(parameter).addClass('flag_color');
+        }
+    }
+}
+
+/*tab切换*/
+$("#tab > li").click(function () {
+    $(".tab > li").removeClass("tabcurrent");
+    $(this).addClass("tabcurrent");
+    $(".website,.userinfo").hide();
+    $("." + $(".tab >li.tabcurrent").attr("name")).show();
+});
+
+//新建会议
+$("#new_meeting").on("click", function () {
+    window.open('oa_new_meeting.html', '_blank', 'height=700, width=1400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');
+});
+
+//个人考勤 - 表左边固定的样式
+function myFunction() {
+    var scrollLeft = $("#rrr").scrollLeft();
+    if (scrollLeft == 0) {
+        $('.table-fixed-left').removeClass('photocopy_style');
+    } else {
+        $('.table-fixed-left').addClass('photocopy_style');
+    }
+}
+
+/*-------------------------------------------------------------------------------------*/
 /*oa首页菜单切换*/
 $("#upcoming").on('click', function () {
     document.getElementById("upcoming").style.borderBottom = "3px solid #cae4fff0";
@@ -150,24 +190,86 @@ $("#condition4").on("change", function () {
     }
 });
 
-/*搜索*/
-$('#conditional_search').on('click', function () {
-    location.reload();
+/* 预定撤销 - 查询条件*/
+$("#condition5").on("change", function () {
+    var opt = $("#condition5").val();
+    if (opt == 1) {
+        $(".meeting_name").css("display", "block");
+        $(".meeting_type  , .meeting_initiator ,.meeting_initiating_department").css("display", "none");
+    } else if (opt == 2) {
+        $(".meeting_type").css("display", "block");
+        $(".meeting_name  , .meeting_initiator ,.meeting_initiating_department").css("display", "none");
+    } else if (opt == 3) {
+        $(".meeting_initiator").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiating_department").css("display", "none");
+    } else if (opt == 4) {
+        $(".meeting_initiating_department").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiator").css("display", "none");
+    } else {
+        $(".head_right_side_input").css("display", "none");
+        $(".head_right_side_select").css("display", "none");
+    }
 });
 
-//标记
-function flag(parameter) {
-    var currentColor = $(parameter).css('color');
-    var presetColor = 'rgb(255, 0, 0)';
-    if (currentColor == presetColor) {
-        var results = confirm("确定要删除标记吗？");
-        if (results) {
-            $(parameter).removeClass('flag_color');
-        }
+/* 预定撤销 - 查询条件*/
+$("#condition6").on("change", function () {
+    var opt = $("#condition6").val();
+    if (opt == 1) {
+        $(".meeting_name").css("display", "block");
+        $(".meeting_type  , .meeting_initiator ,.meeting_initiating_department , .meeting_state").css("display", "none");
+    } else if (opt == 2) {
+        $(".meeting_type").css("display", "block");
+        $(".meeting_name  , .meeting_initiator ,.meeting_initiating_department , .meeting_state").css("display", "none");
+    } else if (opt == 3) {
+        $(".meeting_initiator").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiating_department , .meeting_state").css("display", "none");
+    } else if (opt == 4) {
+        $(".meeting_initiating_department").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiator , .meeting_state").css("display", "none");
+    } else if (opt == 5) {
+        $(".meeting_state").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiating_department , .meeting_initiating_department").css("display", "none");
     } else {
-        var result = confirm("确定要标记吗？");
-        if (result) {
-            $(parameter).addClass('flag_color');
-        }
+        $(".head_right_side_input").css("display", "none");
+        $(".head_right_side_select").css("display", "none");
     }
-}
+});
+
+/* 预定撤销 - 查询条件*/
+$("#condition7").on("change", function () {
+    var opt = $("#condition7").val();
+    if (opt == 1) {
+        $(".meeting_name").css("display", "block");
+        $(".meeting_type  , .meeting_initiator ,.meeting_initiating_department , .meeting_state").css("display", "none");
+    } else if (opt == 2) {
+        $(".meeting_type").css("display", "block");
+        $(".meeting_name  , .meeting_initiator ,.meeting_initiating_department , .meeting_state").css("display", "none");
+    } else if (opt == 3) {
+        $(".meeting_initiator").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiating_department , .meeting_state").css("display", "none");
+    } else if (opt == 4) {
+        $(".meeting_initiating_department").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiator , .meeting_state").css("display", "none");
+    } else if (opt == 5) {
+        $(".meeting_state").css("display", "block");
+        $(".meeting_name  , .meeting_type ,.meeting_initiating_department , .meeting_initiating_department").css("display", "none");
+    } else {
+        $(".head_right_side_input").css("display", "none");
+        $(".head_right_side_select").css("display", "none");
+    }
+});
+
+/* 预定撤销 - 查询条件*/
+$("#condition8").on("change", function () {
+    var opt = $("#condition8").val();
+    if (opt == 2) {
+        $(".head_right_side_select").css("display", "block");
+        $(".head_right_side_input").css("display", "none");
+    } else if (opt == 1) {
+        $(".head_right_side_input").css("display", "block");
+        $(".head_right_side_select").css("display", "none");
+    } else {
+        $(".head_right_side_input").css("display", "none");
+        $(".head_right_side_select").css("display", "none");
+    }
+});

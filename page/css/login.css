@@ -153,6 +153,7 @@ input::-webkit-input-placeholder {
     border-radius: 20px;
     overflow: hidden;
     background: #fff;
+    top: 60px;
 }
 
 .logo {
