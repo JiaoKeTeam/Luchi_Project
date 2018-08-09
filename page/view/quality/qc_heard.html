@@ -41,7 +41,7 @@
 
         <li><a href="#" id="prodoct_list" onclick="prodoct_list()" class="menu_selected"><i class="menuico iconfont1">&#xebdc;</i>产品报表</a></li>
         <li><a href="#" id="testing" onclick="testing()" class="menu_selected"><i class="menuico iconfont1">&#xeb9f;</i>实验检测</a></li>
-        <li><a href="#" id="testing" onclick="testing()" class="menu_selected"><i class="menuico iconfont1">&#xe689;</i>真实数据</a></li>
+        <li><a href="#" id="real_data" onclick="real_data()" class="menu_selected"><i class="menuico iconfont1">&#xe689;</i>真实数据</a></li>
     </ul>
 
 
@@ -79,58 +79,7 @@
 
         });
 
-        $('.manu').click(function () {
-
-            $('.selected').attr('class', 'manu');
-            $(this).attr('class', 'selected');
-
-            switch ($(this).attr('id')) {
-
-                case 'index' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'OA' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'HR' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'DQ' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'ZL' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'JY' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'HB' :
-
-                    $('#mainframe').attr('src', 'main-index.html');
-                    break;
-
-                case 'AQ' :
-
-                    //$('#mainframe').attr('src','main-header.html');
-                    alert('asd');
-                    break;
-
-            }
-
-        })
-
+       
     });
 
     function real_time_protection() {
@@ -158,9 +107,11 @@
         $('iframe').attr("src", "qc_prodoct_list.html");
     }
     function testing() {
-        $('iframe').attr("src", "qc_testing.html");
+        $('iframe').attr("src", "qc_test_detection.html");
     }    
-
+    function real_data(){
+        $('iframe').attr("src", "qc_real_data.html");
+    }
     //二级菜单选中时添加背景色
     $('.menu_selected').click(function () {
 
@@ -170,8 +121,6 @@
 
         $('.menu_selected').removeAttr("style");
         $(this).attr("style", "background:#c4c4c4;");
-
-
     })
 </script>
 
