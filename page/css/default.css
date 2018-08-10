@@ -1303,3 +1303,99 @@ table {
 ::-webkit-scrollbar-track-piece {
     background-color: #fff;
 }
+
+/*删除弹窗*/
+
+#window_background_color {
+    width: 1366px;
+    height: 675px;
+    z-index: 8888;
+    background-color: #000000;
+    position: absolute;
+    opacity: 0.1;
+}
+
+.popup_windows {
+    position: absolute;
+    z-index: 9999;
+    top: 250px;
+    left: 500px;
+}
+
+.window_head {
+    width: 360px;
+    background-color: #FFFFFF;
+    border: 0;
+    position: absolute;
+    box-shadow: 0 0 20px #000000;
+}
+
+.window_closing {
+    float: right;
+    font-size: 25px;
+    padding: 3px 3px 0 0;
+}
+
+.window_body {
+    font-size: 14px;
+    padding: 20px 0 0 20px;
+}
+
+.hint_icon {
+    color: #ff0000;
+    padding-right: 8px;
+    padding-left: 15px;
+    font-size: 23px;
+}
+
+.window_foot {
+    height: 35px;
+    background-color: #5f5f5f;
+    padding-top: 10px;
+}
+
+.window_confirmation {
+    float: right;
+    color: #fff;
+    border: #44a9e4;
+    padding: 4px;
+    background: #44a9e4;
+    margin-right: 10px;
+    width: 51px;
+    text-align: center;
+    height: 20px;
+    line-height: 19px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/*日志弹窗*/
+
+.log_popup {
+    position: absolute;
+    z-index: 9999;
+    left: 300px;
+    top: 150px;
+}
+
+.log_popup_width {
+    width: 800px;
+}
+
+.log_popup_window_head {
+    height: 30px;
+    background-color: #84e8f3;
+}
+
+.log_popup_window_head span {
+    width: 90%;
+    float: left;
+    height: 100%;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.log_window_son {
+    height: 350px;
+}
