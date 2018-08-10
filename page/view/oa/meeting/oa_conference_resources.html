@@ -5,16 +5,6 @@
     <title>会议资源</title>
     <link href="../../../css/oa/oa_common.css" rel="stylesheet" type="text/css">
     <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
-    <style>
-        .nform li span {
-            width: 28%;
-        }
-
-        .simpletable thead tr th {
-            background: #9affe4;
-            border: solid 1px #fff;
-        }
-    </style>
 </head>
 
 <body style="padding:15px 8px 0px 8px;">
@@ -67,7 +57,9 @@
                 </td>
                 <td>
                     <div class="conditional_query">
-
+                        <!--搜索按钮-->
+                        <i class="iconfont search" id="conditional_search" onmousemove="select_color(this)"
+                           onmouseout="unselected_color(this)">&#xe7e7;</i>
                         <div id="div2" class="head_right_side_input">
                             <input type="text">
                         </div>
@@ -81,7 +73,7 @@
                         </div>
 
                         <div id="div1" class="head_right_side">
-                            <select id="condition5">
+                            <select id="condition8">
                                 <option value="0">- -查询条件- -</option>
                                 <option value="1">会议室名称</option>
                                 <option value="2">审核状态</option>
@@ -176,27 +168,4 @@
 <script type="text/javascript" src="../../../js/jquery.js"></script>
 <script type="text/javascript" src="../../../js/oa/oa_common.js"></script>
 <script type="text/javascript" src="../../../js/skin.js"></script>
-<script>
-    $("#tab > li").click(function () {
-        $(".tab > li").removeClass("tabcurrent");
-        $(this).addClass("tabcurrent");
-        $(".website,.userinfo").hide();
-        $("." + $(".tab >li.tabcurrent").attr("name")).show();
-    });
-
-    /* 预定撤销 - 查询条件*/
-    $("#condition5").on("change", function () {
-        var opt = $("#condition5").val();
-        if (opt == 2) {
-            $(".head_right_side_select").css("display", "block");
-            $(".head_right_side_input").css("display", "none");
-        } else if (opt == 1) {
-            $(".head_right_side_input").css("display", "block");
-            $(".head_right_side_select").css("display", "none");
-        } else {
-            $(".head_right_side_input").css("display", "none");
-            $(".head_right_side_select").css("display", "none");
-        }
-    });
-</script>
 </html>

@@ -6,71 +6,18 @@
     <link href="../../../css/oa/oa_common.css" rel="stylesheet" type="text/css">
 </head>
 
-<style>
-    .simpletables {
-        width: 100%;
-    }
-
-    .simpletables thead tr th {
-        font-weight: bold;
-        background: #f7f7f7;
-        text-align: center;
-        white-space: nowrap;
-        border: solid 1px #bdbdbd;
-        padding: 10px 8px;
-        height: 32px;
-    }
-
-    .simpletables tbody tr td {
-        line-height: 30px;
-        white-space: nowrap;
-        text-align: center;
-        border: solid 1px #bdbdbd;
-        padding: 20px 8px;
-    }
-
-    .simpletables a:hover {
-        color: #000;
-    }
-
-    .date_header_item {
-        position: relative;
-        height: 52px;
-        margin: -24px -8px;
-    }
-
-    .date_header_item_week {
-        position: absolute;
-        bottom: 2px;
-        right: 14px;
-    }
-
-    .date_header_item_date {
-        position: absolute;
-        top: 8px;
-        left: 14px;
-    }
-
-    .photocopy_style {
-        box-shadow: 6px 0 6px -4px rgba(0, 0, 0, .2);
-        left: 7px;
-    }
-
-    .tr:hover {
-        background: #f5f9ff;
-    }
-</style>
 <body style="padding:15px 8px 0 8px;">
 
-<div class="formal-workers">
+<div class="personal-attendance">
 
-    <div style="height: 30px;width: 100%">
-        <table width="100%" height="100%">
+    <!--导出-->
+    <div class="derive-report">
+        <table>
             <tbody>
             <tr>
                 <td>
                     <ul class="tab-switch" id="tab">
-                        <li name="website" class="tabcurrent"><a href="javascript:;">导出报表</a></li>
+                        <li><a href="javascript:;">导出报表</a></li>
                     </ul>
                 </td>
             </tr>
@@ -78,9 +25,9 @@
         </table>
     </div>
 
-    <div id="rrr" style="overflow-x: scroll;position: relative;max-height: 500px;" onscroll="myFunction()">
+    <div id="rrr" class="attendance-list" onscroll="myFunction()">
 
-        <table class="simpletables" id="aaa" style="margin-top: 30px;position: relative;width: 2360px;">
+        <table class="attendance-list-content" id="aaa">
             <colgroup>
                 <col style="width: 120px; min-width: 120px;">
                 <col style="width: 200px;min-width: 200px;">
@@ -183,6 +130,14 @@
                         </div>
                     </span>
                 </th>
+                <th class="">
+                    <span>
+                        <div class="date_header_item">
+                            <div class="date_header_item_week">三</div>
+                            <div class="date_header_item_date">8</div>
+                        </div>
+                    </span>
+                </th>
 
             </tr>
             </thead>
@@ -217,6 +172,7 @@
                 <td>旷工</td>
                 <td>正常</td>
                 <td>正常</td>
+                <td>正常</td>
             </tr>
             <tr class="tr">
                 <td>张三</td>
@@ -244,6 +200,7 @@
                 <td>旷工</td>
                 <td>正常</td>
                 <td>正常</td>
+                <td>正常</td>
             </tr>
             </tbody>
 
@@ -251,16 +208,15 @@
     </div>
 
     <!--表左边固定-->
-    <div class="ant-table-fixed-left"
-         style="position: absolute;top: 85px;overflow: hidden;transition: box-shadow .3s ease;border-radius: 0;left: 7px;">
+    <div class="table-fixed-left">
         <div class="ant-table-header">
             <table class="ant-table-fixed">
                 <colgroup>
                     <col style="width: 120px; min-width: 120px;">
                 </colgroup>
                 <thead class="ant-table-thead">
-                <tr style="height:53px;border-bottom: none;border: 1px #bdbebd solid;background: #f8f7f7;">
-                    <th class="">
+                <tr>
+                    <th>
                         <span>
                             <div style="text-align: center;">姓名</div>
                         </span>
@@ -277,17 +233,17 @@
                         <col style="width: 120px; min-width: 120px;">
                     </colgroup>
                     <tbody>
-                    <tr style="height: 70px;border: 1px #bdbebd solid;border-top: none;background: #fff;">
+                    <tr>
                         <td class="">
-                            <span style="padding-left: 0px;"></span>
+                            <span></span>
                             <div style="text-align: center;">
                                 <div>张三</div>
                             </div>
                         </td>
                     </tr>
-                    <tr style="height: 71px;border: 1px #bdbebd solid;border-top: none;background: #fff;">
+                    <tr>
                         <td class="">
-                            <span style="padding-left: 0px;"></span>
+                            <span></span>
                             <div style="text-align: center;">
                                 <div>李四</div>
                             </div>
@@ -305,7 +261,9 @@
 <script type="text/javascript" src="../../../js/jquery.js"></script>
 <script type="text/javascript" src="../../../js/common.js"></script>
 <script type="text/javascript" src="../../../js/skin.js"></script>
+<script type="text/javascript" src="../../../js/oa/oa_common.js"></script>
 <script>
+    /*列表中的日期*/
     $(function () {
         var time = new Date();
         var date = time.getDate();
@@ -313,7 +271,6 @@
         var show_day = new Array('日', '一', '二', '三', '四', '五', '六');
         var day = time.getDay();
 
-        //$("#aaa tr:first").append('<th class=""><span><div>' + show_day[day] + '</div><div>' + date + '</div></span></th>');
         $("#aaa tr:first").append("<th class=''>" +
             "<span>" +
             "<div class='date_header_item'>" +
@@ -323,15 +280,5 @@
             "</span>" +
             "</th>");
     });
-
-    //表左边固定的样式
-    function myFunction() {
-        var scrollLeft = $("#rrr").scrollLeft();
-        if (scrollLeft == 0) {
-            $('.ant-table-fixed-left').removeClass('photocopy_style');
-        } else {
-            $('.ant-table-fixed-left').addClass('photocopy_style');
-        }
-    }
 </script>
 </html>
