@@ -1040,3 +1040,183 @@ table {
     border: solid 0px #d6d6d6;
     margin-top: 40px;
 }
+
+.personnel-archives {
+    width: 100%;
+}
+
+.form-field {
+    width: 15%;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px #000 solid;
+    text-align: right;
+    background: #f9f9f9;
+}
+
+.form-content input {
+    height: 30px;
+    outline: none;
+    padding: 0 10px;
+    width: -webkit-fill-available;
+}
+
+.form-content select {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    background: #fff;
+}
+
+.form-content select option {
+    font-size: 13px;
+    width: 200px;
+}
+
+.form-content {
+    width: 15%;
+    height: 30px;
+    border: 1px #000 solid;
+}
+
+.basic-situation {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background: #fff;
+    font-size: 17px;
+    border: 1px #000 solid;
+}
+
+.top_toolbar {
+    border: solid 1px #d4d4d4;
+    padding-left: 5px;
+    background: #f7f6f6;
+}
+
+.education-situation td {
+    text-align: center;
+}
+
+.head-portrait {
+    width: 100%;
+    height: 100%;
+}
+
+.head-portrait img {
+    width: 100%;
+    height: 100%;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 74px;
+    height: 30px;
+}
+
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+.confirm-button {
+    height: 31px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.confirm-button a {
+    font-size: 14px;
+    border: 1px #000 solid;
+    padding: 5px 10px;
+    background: #f5f9ff;
+    position: absolute;
+}
+
+.contract-new-page {
+    width: 735px;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 20px;
+}
+
+.contract-block-title {
+    text-align: left;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.contract-form {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.contract-form-title {
+    text-align: right;
+    float: left;
+    font-size: 14px;
+    width: 20%;
+    padding-top: 9px;
+}
+
+.contract-form-title i {
+    color: red;
+    font-style: normal;
+    float: right;
+    margin-right: 3px;
+}
+
+.contract-form-title span {
+    float: right;
+    margin-right: 3px;
+}
+
+.contract-form-input {
+    height: 100%;
+    padding-left: 10px;
+    width: 70%;
+    float: left;
+}
+
+.contract-form-input input {
+    width: 60%;
+    height: 23px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: auto;
+    line-height: 20px;
+    outline: none;
+}
