@@ -24,7 +24,7 @@ body{
     padding: 13px 0px 21px 105px;
     border-top: 1px solid #ececec;
     border-bottom: 1px solid #fff6f6;
-    box-shadow: 0 5px 8px -5px rgba(0, 0, 0, 0.075);
+    box-shadow: 0px 20px 8px -5px rgba(0, 0, 0, 0.075);
     padding: 37px 17px 28px 15px;
 }
 .munu a { color: rgb(32, 14, 14); text-decoration: none; }
@@ -33,11 +33,39 @@ body{
 	
 }
 
+.div_munu_detection{
+    width: 10%;
+    margin: 50px;
+    margin-top: 38px;
+    position: fixed;
+}
+.munu_detection{
+    background: #fff;
+    width: 100%;
+    position: static;
+    top: auto;
+    bottom: 0;
+    box-shadow: -6px 5px 15px 2px rgba(255, 255, 255, 0.1);
+}
+
+.munu_detection li {
+    padding: 13px 0px 21px 105px;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #fff6f6;
+    box-shadow: -5px 11px 8px -5px rgba(0, 0, 0, 0.075);
+    padding: 18px 0px 20px 13px;
+}
+.munu_detection a { color: rgb(32, 14, 14); text-decoration: none; }
+.munu_detection b {
+	font: bold Montserrat; display: block;
+	
+}
+
 /*from表单*/
 .div_from{
     position: absolute;
     width: 60%;
-    height: 200%;
+    height: auto;
     margin-bottom: 10%;
     top: 10%;
     left: 20%;
@@ -46,12 +74,12 @@ body{
 }
 .title_from{
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 1%;
+    left: 60%;
 }
 .title_from span{
     margin-bottom: .5em;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight:bold;
 }
 .input_div{
@@ -74,11 +102,10 @@ body{
 }
 .parcel_div span{
     float: left;
-    font-family:宋体;
      font-weight: bold;
     padding-right: 5%;
-    color: #737070;
-    font-family: Verdana,Arial;
+    color: #757070;
+    font-family: sans-serif;
     font-size: 11pt;
     padding-top: 4%;
 
@@ -95,6 +122,38 @@ body{
     -webkit-text-fill-color: cornflowerblue;
     text-align: center;
 }
+
+
+
+.parcel_two_div{
+    width: 30%;
+    height: auto;
+    float: left;
+    padding-bottom: 5%;
+}
+.parcel_two_div span{
+    float: left;
+     font-weight: bold;
+    padding-right: 5%;
+    color: #757070;
+    font-family: sans-serif;
+    font-size: 11pt;
+    padding-top: 4%;
+
+}
+.parcel_two_div input{
+    float: left;
+    border-bottom: 1px solid #ccbbbbd4;
+    box-shadow: 0 5px 8px -5px rgba(0, 0, 0, 0.075);
+    height: 25px;
+    outline: 0;
+    font-family:Verdana,Arial; 
+    font-size: 10pt;
+    -webkit-text-fill-color: cornflowerblue;
+    text-align: center;
+    padding-top: 15px;
+}
+
 
 .btn_div{
     width: 100%;
@@ -118,8 +177,35 @@ body{
     box-shadow: -2px 0px 8px 2px #f1f1f1;
     cursor: pointer;
 }
+.div_span{
+        width: 80%;
+}
+.div_span span{
+    padding-bottom: 2%;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4d5573;
+}
+.div_span span i[class = 'i']{
+    padding-bottom: 20%;
 
+}
 
+.div_input{
+    width: auto;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 17%;
+
+}
+.div_input_only{
+    width: auto;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+
+}
 
 /*table*/
 
