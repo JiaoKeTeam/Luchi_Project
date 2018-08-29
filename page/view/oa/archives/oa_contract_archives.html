@@ -16,6 +16,10 @@
             <tbody>
             <tr>
                 <td>
+                    <div class="head_left_button" id="new-employee-files" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
+                        &#xeb86; 新建
+                    </div>
+
                     <div class="head_left_button" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
                         &#xe7e9; 编辑
                     </div>
@@ -145,4 +149,10 @@
 <script type="text/javascript" src="../../../js/jquery.js"></script>
 <script type="text/javascript" src="../../../js/common.js"></script>
 <script type="text/javascript" src="../../../js/oa/oa_common.js"></script>
+<script>
+    //新建会议
+    $("#new-employee-files").on("click", function () {
+        window.open('oa_new_contract.html', '_blank', 'height=700, width=1000, top=0, left=100, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');
+    });
+</script>
 </html>

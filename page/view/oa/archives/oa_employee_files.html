@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>自有员工档案</title>
+    <meta charset="utf-8">
+    <title>自有员工档案</title>
     <link href="../../../css/oa/oa_common.css" rel="stylesheet" type="text/css">
     <link href="../../../css/style/green.css" rel="stylesheet" type="text/css" id='link'>
 </head>
@@ -17,6 +16,10 @@
             <tbody>
             <tr>
                 <td>
+                    <div class="head_left_button" id="new-employee-files" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
+                        &#xeb86; 新建
+                    </div>
+
                     <div class="head_left_button" onmousemove="select_color(this)" onmouseout="unselected_color(this)">
                         &#xe7e9; 编辑
                     </div>
@@ -89,11 +92,11 @@
         <th><input type="checkbox"></th>
         <th>标记</th>
         <th>编号</th>
-        <th>标题</th>
-        <th>摘要</th>
-        <th>经手人</th>
-        <th>签署单位</th>
-        <th>签署日期</th>
+        <th>姓名</th>
+        <th>所在部门</th>
+        <th>职位名称</th>
+        <th>经办人</th>
+        <th>入职日期</th>
         <th>建档日期</th>
         </thead>
 
@@ -104,11 +107,11 @@
             <td><input type="checkbox"></td>
             <td class="iconfont" onclick="flag(this)">&#xe6f5;</td>
             <td>GLB1001</td>
-            <td>2018年与xxx单位合作合同</td>
-            <td>北京朝阳区xxx路，路面铺设</td>
-            <td>刘喜福</td>
-            <td>xxx有限公司</td>
-            <td>2018-06-04</td>
+            <td>张三</td>
+            <td>运营部</td>
+            <td>运营专员</td>
+            <td>李四</td>
+            <td>2018-06-10</td>
             <td>2018-06-12</td>
         </tr>
 
@@ -116,24 +119,24 @@
             <td><input type="checkbox"></td>
             <td class="iconfont" onclick="flag(this)">&#xe6f5;</td>
             <td>CGB1001</td>
-            <td>xxx采购合同</td>
-            <td>购买xxx产品</td>
-            <td>张华伦</td>
-            <td>xxx有限公司</td>
-            <td>2018-06-04</td>
-            <td>2018-06-12</td>
+            <td>王五</td>
+            <td>产品部</td>
+            <td>销售专员</td>
+            <td>李四</td>
+            <td>2018-06-22</td>
+            <td>2018-06-23</td>
         </tr>
 
         <tr>
             <td><input type="checkbox"></td>
             <td class="iconfont" onclick="flag(this)">&#xe6f5;</td>
             <td>AQB1001</td>
-            <td>电视监控工程安装合同</td>
-            <td>电视监控安装</td>
-            <td>康斯莱</td>
-            <td>xxx有限公司</td>
-            <td>2018-06-04</td>
-            <td>2018-06-12</td>
+            <td>赵六</td>
+            <td>技术部</td>
+            <td>销售专员</td>
+            <td>李四</td>
+            <td>2018-04-02</td>
+            <td>2018-04-04</td>
         </tr>
         </tbody>
 
@@ -146,4 +149,11 @@
 <script type="text/javascript" src="../../../js/jquery.js"></script>
 <script type="text/javascript" src="../../../js/common.js"></script>
 <script type="text/javascript" src="../../../js/oa/oa_common.js"></script>
+<script>
+
+    //新建会议
+    $("#new-employee-files").on("click", function () {
+        window.open('oa_add_document.html', '_blank', 'height=700, width=1400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');
+    });
+</script>
 </html>
